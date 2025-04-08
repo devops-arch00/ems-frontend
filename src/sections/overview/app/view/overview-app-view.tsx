@@ -11,10 +11,12 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { alpha, Tab, Tabs } from '@mui/material';
 import { useCallback, useState, useEffect } from 'react';
+import { _bankingRecentTransitions } from 'src/_mock';
 import EcommerceWidgetSummary from '../../e-commerce/ecommerce-widget-summary';
 import EcommerceYearlySales from '../../e-commerce/ecommerce-yearly-sales';
 import BankingBalanceStatistics from '../../banking/banking-balance-statistics';
 import EnergyProduction from '../energy-production';
+import BankingRecentTransitions from '../../banking/banking-recent-transitions';
 
 // Mock data import
 // import mockEnergyData from './mockEnergyData';
@@ -354,10 +356,10 @@ const mockEnergyData:any = {
           { label: "Generator", value: 30 }
         ],
         changeInUsage: {
-          categories: ["8AM", "10AM", "12PM", "2PM", "4PM", "6PM", "8PM", "10PM"],
+          categories: ["Today", "Yesterday",],
           data: [
-            { name: "Consumption", data: [44, 109, 160, 153, 163, 169, 164, 123] },
-            { name: "Generation", data: [11, 46, 40, 72, 66, 55, 42, 24] }
+            { name: "Consumption", data: [44, 109] },
+            { name: "Generation", data: [11, 46] }
           ]
         },
         usageEstimate: {
@@ -404,10 +406,10 @@ const mockEnergyData:any = {
           { label: "Generator", value: 27 }
         ],
         changeInUsage: {
-          categories: ["Week 1", "Week 2", "Week 3", "Week 4"],
+          categories: ["Mar", "Apr"],
           data: [
-            { name: "Consumption", data: [10950, 11360, 11200, 9905] },
-            { name: "Generation", data: [2400, 2650, 2750, 2460] }
+            { name: "Consumption", data: [10950, 11360] },
+            { name: "Generation", data: [2400, 2650] }
           ]
         },
         usageEstimate: {
@@ -454,10 +456,9 @@ const mockEnergyData:any = {
           { label: "Generator", value: 27 }
         ],
         changeInUsage: {
-          categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-          data: [
-            { name: "Consumption", data: [41265, 39780, 42700, 43100, 43660, 46170, 46590, 44050, 41750, 40480, 39600, 35205] },
-            { name: "Generation", data: [10580, 10188, 11127, 11327, 11748, 12233, 12226, 11453, 11105, 10687, 10296, 9026] }
+          categories: ["2024", "2025",],          data: [
+            { name: "Consumption", data: [41265, 39780,] },
+            { name: "Generation", data: [10580, 10188,] }
           ]
         },
         usageEstimate: {
@@ -512,10 +513,9 @@ const mockEnergyData:any = {
             { label: "Generator", value: 25 }
           ],
           changeInUsage: {
-            categories: ["8AM", "10AM", "12PM", "2PM", "4PM", "6PM", "8PM", "10PM"],
-            data: [
-              { name: "Consumption", data: [32, 58, 79, 86, 91, 95, 88, 72] },
-              { name: "Generation", data: [8, 14, 19, 23, 24, 22, 18, 10] }
+            categories: ["Today", "Yesterday",],            data: [
+              { name: "Consumption", data: [32, 58 ] },
+              { name: "Generation", data: [8, 14] }
             ]
           },
           usageEstimate: {
@@ -562,10 +562,10 @@ const mockEnergyData:any = {
             { label: "Generator", value: 25 }
           ],
           changeInUsage: {
-            categories: ["Week 1", "Week 2", "Week 3", "Week 4"],
+            categories: ["Mar", "Apr"],
             data: [
-              { name: "Consumption", data: [6975, 7350, 7680, 7445] },
-              { name: "Generation", data: [1225, 1375, 1495, 1325] }
+              { name: "Consumption", data: [6975, 7350] },
+              { name: "Generation", data: [1225, 1375] }
             ]
           },
           usageEstimate: {
@@ -612,10 +612,10 @@ const mockEnergyData:any = {
             { label: "Generator", value: 25 }
           ],
           changeInUsage: {
-            categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-            data: [
-              { name: "Consumption", data: [25000, 26100, 27300, 28500, 29800, 31000, 30350, 29100, 27800, 26900, 25650, 23000] },
-              { name: "Generation", data: [6750, 7000, 7280, 7500, 7820, 8050, 7950, 7620, 7280, 7010, 6680, 5980] }
+            categories: ["2024", "2025",],          
+              data: [
+              { name: "Consumption", data: [25000, 26100,] },
+              { name: "Generation", data: [6750, 7000, ] }
             ]
           },
           usageEstimate: {
@@ -668,10 +668,10 @@ const mockEnergyData:any = {
             { label: "Generator", value: 25 }
           ],
           changeInUsage: {
-            categories: ["8AM", "10AM", "12PM", "2PM", "4PM", "6PM", "8PM", "10PM"],
+            categories: ["Today", "Yesterday",],
             data: [
-              { name: "Consumption", data: [28, 42, 53, 61, 67, 73, 68, 50] },
-              { name: "Generation", data: [7, 12, 15, 17, 19, 18, 14, 8] }
+              { name: "Consumption", data: [28, 42] },
+              { name: "Generation", data: [7, 12] }
             ]
           },
           usageEstimate: {
@@ -722,10 +722,10 @@ const mockEnergyData:any = {
           { label: "Generator", value: 33 }
         ],
         changeInUsage: {
-          categories: ["8AM", "10AM", "12PM", "2PM", "4PM", "6PM", "8PM", "10PM"],
+          categories: ["Mar", "Apr"],
           data: [
-            { name: "Consumption", data: [41, 97, 140, 153, 167, 164, 123, 121] },
-            { name: "Generation", data: [17, 49, 33, 66, 59, 55, 37, 23] }
+            { name: "Consumption", data: [41, 97] },
+            { name: "Generation", data: [17, 49] }
           ]
         },
         usageEstimate: {
@@ -772,10 +772,11 @@ const mockEnergyData:any = {
           { label: "Generator", value: 29 }
         ],
         changeInUsage: {
-          categories: ["Week 1", "Week 2", "Week 3", "Week 4"],
-          data: [
-            { name: "Consumption", data: [6370, 6720, 6640, 6223] },
-            { name: "Generation", data: [1115, 1301, 1378, 1280] }
+          categories: ["2024", "2025",],
+               
+            data: [
+            { name: "Consumption", data: [6370, 6720] },
+            { name: "Generation", data: [1115, 1301] }
           ]
         },
         usageEstimate: {
@@ -3247,6 +3248,20 @@ export default function OverviewAppView() {
             }}
           />
         </Grid>
+        <Grid xs={12}>
+        <BankingRecentTransitions
+              title="Recent Transitions"
+              tableData={_bankingRecentTransitions}
+              tableLabels={[
+                { id: 'description', label: 'Description' },
+                { id: 'date', label: 'Name' },
+                { id: 'address', label: 'Address' },
+                { id: 'status', label: 'Status' },
+                { id: 'consumption', label: 'Consumption' },
+                { id: '' },
+              ]}
+            />
+            </Grid>
       </Grid>
     </Container>
   );
