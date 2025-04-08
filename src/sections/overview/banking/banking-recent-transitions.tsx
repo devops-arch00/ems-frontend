@@ -37,6 +37,8 @@ type RowProps = {
   name: string | null;
   avatarUrl: string | null;
   date: Date | number | string;
+  consumption: string;
+  logo: string;
 };
 
 interface Props extends CardProps {
@@ -55,7 +57,7 @@ export default function BankingRecentTransitions({
 }: Props) {
   return (
     <Card {...other}>
-      <CardHeader title={title} subheader={subheader} sx={{ mb: 3 }} />
+      {title && <CardHeader title={title} subheader={subheader} sx={{ mb: 3 }} />}
 
       <TableContainer sx={{ overflow: 'unset' }}>
         <Scrollbar sx={{ minWidth: 720 }}>
@@ -121,40 +123,19 @@ function BankingRecentTransitionsRow({ row }: BankingRecentTransitionsRowProps) 
 
   const renderAvatar = (
     <Box sx={{ position: 'relative', mr: 2 }}>
-      <Badge
-        overlap="circular"
-        color={row.type === 'Income' ? 'success' : 'error'}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-        badgeContent={
-          <Iconify
-            icon={
-              row.type === 'Income'
-                ? 'eva:diagonal-arrow-left-down-fill'
-                : 'eva:diagonal-arrow-right-up-fill'
-            }
-            width={16}
-          />
-        }
+      <Avatar
+        src={row.logo || ''}
         sx={{
-          [`& .${badgeClasses.badge}`]: {
-            p: 0,
-            width: 20,
+          width: 48,
+          height: 48,
+          color: 'text.secondary',
+          bgcolor: 'background.neutral',
+          objectFit: 'contain',
+          '& .MuiAvatar-img': {
+            objectFit: 'contain',
           },
         }}
-      >
-        <Avatar
-          src={row.avatarUrl || ''}
-          sx={{
-            width: 48,
-            height: 48,
-            color: 'text.secondary',
-            bgcolor: 'background.neutral',
-          }}
-        >
-          {row.name === 'Books' && <Iconify icon="eva:book-fill" width={24} />}
-          {row.name === 'Beauty & Health' && <Iconify icon="solar:heart-bold" width={24} />}
-        </Avatar>
-      </Badge>
+      />
     </Box>
   );
 
@@ -162,43 +143,14 @@ function BankingRecentTransitionsRow({ row }: BankingRecentTransitionsRowProps) 
     <>
       <TableRow>
         <TableCell sx={{ display: 'flex', alignItems: 'center' }}>
-          {/* {renderAvatar} */}
+          {renderAvatar}
           <ListItemText primary={row.name} />
         </TableCell>
 
-        {/* <TableCell>
-          <ListItemText
-            primary={format(new Date(row.date), 'dd MMM yyyy')}
-            secondary={format(new Date(row.date), 'p')}
-            primaryTypographyProps={{ typography: 'body2' }}
-            secondaryTypographyProps={{
-              mt: 0.5,
-              component: 'span',
-              typography: 'caption',
-            }}
-          />
-        </TableCell> */}
-
         <TableCell>{row.category}</TableCell>
-
-        {/* <TableCell>
-          <Label
-            variant={isLight ? 'soft' : 'filled'}
-            color={
-              (row.status === 'completed' && 'success') ||
-              (row.status === 'progress' && 'warning') ||
-              'error'
-            }
-          >
-            {row.status}
-          </Label>
-        </TableCell> */}
-
-        {/* <TableCell align="right" sx={{ pr: 1 }}>
-          <IconButton color={popover.open ? 'inherit' : 'default'} onClick={popover.onOpen}>
-            <Iconify icon="eva:more-vertical-fill" />
-          </IconButton>
-        </TableCell> */}
+        <TableCell>{row.amount}</TableCell>
+        <TableCell>{row.status}</TableCell>
+        <TableCell>{row.consumption}</TableCell>
       </TableRow>
 
       <CustomPopover
