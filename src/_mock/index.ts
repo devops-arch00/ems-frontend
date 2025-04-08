@@ -462,16 +462,16 @@ export const getEnergyData = (country: string, state: string, city: string) => {
 };
 
 // Export the merged electricity costs data for the table
-export const electricityCosts = [
-  // Adding more realistic daily consumption data for cities
-  { id: '1', city: 'Karachi', consumption: 5100 },
-  { id: '2', city: 'Lahore', consumption: 4200 },
-  { id: '3', city: 'Islamabad', consumption: 3800 },
-  { id: '4', city: 'Peshawar', consumption: 3200 },
-  { id: '5', city: 'Quetta', consumption: 2400 },
-  { id: '6', city: 'Faisalabad', consumption: 3100 },
-  { id: '7', city: 'Multan', consumption: 2850 },
-  { id: '8', city: 'Hyderabad', consumption: 2900 },
-  { id: '9', city: 'Sukkur', consumption: 2200 },
-  { id: '10', city: 'Sialkot', consumption: 2450 },
-];
+// const electricityCosts = [
+//   // Adding more realistic daily consumption data for cities
+//   { id: '1', city: 'Karachi', consumption: 5100 },
+//   { id: '2', city: 'Lahore', consumption: 4200 },
+//   { id: '3', city: 'Islamabad', consumption: 3800 },
+//   { id: '4', city: 'Peshawar', consumption: 3200 },
+//   { id: '5', city: 'Quetta', consumption: 2400 },
+//   { id: '6', city: 'Faisalabad', consumption: 3100 },
+//   { id: '7', city: 'Multan', consumption: 2850 },
+//   { id: '8', city: 'Hyderabad', consumption: 2900 },
+//   { id: '9', city: 'Sukkur', consumption: 2200 },
+//   { id: '10', city: 'Sialkot', consumption: 2450 },
+// ];
