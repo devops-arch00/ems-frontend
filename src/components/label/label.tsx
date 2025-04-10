@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { forwardRef, ReactNode } from 'react';
 // @mui
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -28,17 +28,18 @@ const Label = forwardRef<HTMLSpanElement, LabelProps>(
           ...(endIcon && { pr: 0.75 }),
           ...sx,
         }}
-        theme={theme}
         {...other}
       >
-        {startIcon && <Box sx={{ mr: 0.75, ...iconStyle }}> {startIcon} </Box>}
+        {startIcon && <Box component="span" sx={{ mr: 0.75, ...iconStyle }}>{startIcon}</Box>}
 
         {children}
 
-        {endIcon && <Box sx={{ ml: 0.75, ...iconStyle }}> {endIcon} </Box>}
+        {endIcon && <Box component="span" sx={{ ml: 0.75, ...iconStyle }}>{endIcon}</Box>}
       </StyledLabel>
     );
   }
 );
+
+Label.displayName = 'Label';
 
 export default Label;

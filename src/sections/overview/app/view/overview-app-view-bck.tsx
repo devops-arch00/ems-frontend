@@ -307,7 +307,7 @@ export default function OverviewAppView() {
               />
             </Stack>
             <EnergyProduction
-              title="Energy Consumption by Source"
+              title="a"
               chart={{
                 series: energyData?.energySources || [
                   { label: 'Solar Energy', value: 22 },

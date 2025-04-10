@@ -74,13 +74,32 @@ export default function EnergyProduction({ title, subheader, chart, ...other }: 
             show: true,
             name: { show: true },
             value: {
+              show: true,
               formatter: (value: number | string) => `${value}%`,
               color: theme.palette.text.primary,
               fontSize: '14px',
+              offsetY: 4,
             },
             total: {
               show: true,
+              label: 'Total',
+              formatter: () => 'Energy Sources',
+              color: theme.palette.text.secondary,
             },
+          },
+        },
+        dataLabels: {
+          enabled: true,
+          formatter: (val: number) => `${val.toFixed(0)}%`,
+          style: {
+            fontSize: '12px',
+            colors: [theme.palette.background.paper],
+            fontWeight: 'bold',
+          },
+          dropShadow: {
+            enabled: true,
+            blur: 3,
+            opacity: 0.5,
           },
         },
       },

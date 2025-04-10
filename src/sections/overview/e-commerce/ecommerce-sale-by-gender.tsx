@@ -73,8 +73,8 @@ export default function EcommerceSaleByGender({ title, subheader, total, chart, 
       type: 'gradient',
       gradient: {
         colorStops: colors.map((colr) => [
-          { offset: 0, color: colr[0] },
-          { offset: 100, color: colr[1] },
+          { offset: 0, color: colr[0], opacity: 0.5 }, // Add opacity
+          { offset: 100, color: colr[1], opacity: 0.5 }, // Add opacity
         ]),
       },
     },

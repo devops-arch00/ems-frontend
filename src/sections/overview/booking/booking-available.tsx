@@ -52,8 +52,8 @@ export default function BookingAvailable({ title, subheader, chart, ...other }: 
       type: 'gradient',
       gradient: {
         colorStops: [
-          { offset: 0, color: colors[0] },
-          { offset: 100, color: colors[1] },
+          { offset: 0, color: colors[0], opacity: 0.5 },
+          { offset: 100, color: colors[1], opacity: 0.5 },
         ],
       },
     },

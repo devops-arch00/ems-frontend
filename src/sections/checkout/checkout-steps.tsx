@@ -6,6 +6,8 @@ import Stack from '@mui/material/Stack';
 import Stepper, { StepperProps } from '@mui/material/Stepper';
 import StepLabel, { stepLabelClasses } from '@mui/material/StepLabel';
 import MuiStepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
+import { StepIconProps } from '@mui/material/StepIcon'; // Correctly import the StepIconProps type
+
 // components
 import Iconify from 'src/components/iconify';
 
@@ -48,7 +50,7 @@ export default function CheckoutSteps({ steps, activeStep, sx, ...other }: Props
       {steps.map((label) => (
         <Step key={label}>
           <StepLabel
-            StepIconComponent={StepIcon}
+            StepIconComponent={StepIcon}  // Use the custom StepIcon here
             sx={{
               [`& .${stepLabelClasses.label}`]: {
                 fontWeight: 'fontWeightSemiBold',
@@ -64,11 +66,6 @@ export default function CheckoutSteps({ steps, activeStep, sx, ...other }: Props
 }
 
 // ----------------------------------------------------------------------
-
-type StepIconProps = {
-  active: boolean;
-  completed: boolean;
-};
 
 function StepIcon({ active, completed }: StepIconProps) {
   return (

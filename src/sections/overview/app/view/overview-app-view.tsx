@@ -34,12 +34,12 @@ const mockEnergyData: any = {
           totalConsumption: {
             value: 765,
             percentChange: 2.6,
-            chartData: [22, 58, 65, 72, 82, 94, 87, 72, 67, 43], // hourly data points
+            chartData: [42, 65, 78, 105, 138, 165, 172, 185, 159, 132, 98, 67], // Updated hourly data points
           },
           currentUsage: {
             value: 83,
             percentChange: -0.1,
-            chartData: [56, 67, 72, 62, 58, 54, 49, 54, 67, 68], // hourly data points
+            chartData: [48, 60, 75, 102, 145, 160, 154, 140, 120, 100, 82, 65], // Updated hourly data points
           },
           energyBySource: [
             { label: 'Solar Energy', value: 22 },
@@ -47,14 +47,14 @@ const mockEnergyData: any = {
             { label: 'Generator', value: 30 },
           ],
           changeInUsage: {
-            categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
+            categories: ['Today', 'Yesterday'],
             data: [
-              { name: 'Consumption', data: [10, 41, 65, 51, 49, 62, 69, 51] },
-              { name: 'Generation', data: [5, 34, 23, 56, 47, 38, 29, 17] },
+              { name: 'Consumption', data: [765, 3137] },
+              { name: 'Generation', data: [383, 2601] },
             ],
           },
           usageEstimate: {
-            categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
+            categories: ['Today', 'Yesterday'],
             series: [
               {
                 name: 'Actual',
@@ -85,17 +85,19 @@ const mockEnergyData: any = {
             value: 18765,
             percentChange: 3.8,
             chartData: [
-              565, 688, 725, 662, 598, 634, 719, 742, 677, 653, 621, 643, 702, 732, 765, 722, 689,
-              655, 672, 688, 712, 735, 678, 645, 590, 634, 678, 723, 745, 698,
-            ],
+              1250, 1320, 1280, 1400, 1465, 1350, 1300, 1380, 1450, 1425, 1480, 1510, 1550, 1600,
+              1580, 1520, 1485, 1450, 1420, 1400, 1370, 1335, 1300, 1275, 1260, 1240, 1200, 1180,
+              1150, 1100,
+            ], // Updated daily data points
           },
           currentUsage: {
             value: 698,
             percentChange: 1.2,
             chartData: [
-              565, 588, 625, 662, 698, 734, 719, 702, 677, 653, 621, 643, 662, 682, 695, 722, 709,
-              675, 642, 618, 642, 675, 698, 725, 690, 674, 658, 673, 698, 713,
-            ],
+              1220, 1265, 1285, 1330, 1390, 1420, 1375, 1340, 1310, 1295, 1270, 1250, 1235, 1220,
+              1210, 1205, 1190, 1175, 1160, 1145, 1130, 1120, 1100, 1085, 1070, 1060, 1050, 1035,
+              1020, 1000,
+            ], // Updated daily data points
           },
           energyBySource: [
             { label: 'Solar Energy', value: 26 },
@@ -103,22 +105,22 @@ const mockEnergyData: any = {
             { label: 'Generator', value: 29 },
           ],
           changeInUsage: {
-            categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+            categories: ['Mar', 'Apr'],
             data: [
-              { name: 'Consumption', data: [4980, 5240, 4860, 3685] },
-              { name: 'Generation', data: [1325, 1450, 1375, 1280] },
+              { name: 'Consumption', data: [4980, 5240] },
+              { name: 'Generation', data: [1325, 1450] },
             ],
           },
           usageEstimate: {
-            categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Next Week'],
+            categories: ['Mar', 'Apr'],
             series: [
               {
                 name: 'Actual',
-                data: [4980, 5240, 4860, 3685, null],
+                data: [4980, 5240],
               },
               {
                 name: 'Forecast',
-                data: [null, null, null, null, 4950],
+                data: [4950, 5240],
               },
             ],
             percentChange: 5.2,
@@ -141,15 +143,15 @@ const mockEnergyData: any = {
             value: 217850,
             percentChange: 12.4,
             chartData: [
-              18765, 17980, 19250, 18450, 17860, 18970, 19840, 18650, 17450, 16980, 17650, 16005,
-            ],
+              18000, 18500, 19000, 19500, 20000, 20500, 21000, 21500, 22000, 22500, 23000, 23500,
+            ], // Updated monthly data points
           },
           currentUsage: {
             value: 16005,
             percentChange: -5.8,
             chartData: [
-              18765, 17980, 19250, 18450, 17860, 18970, 19840, 18650, 17450, 16980, 17650, 16005,
-            ],
+              17200, 17800, 18400, 19100, 19750, 20200, 20800, 21150, 21500, 21800, 22050, 22200,
+            ], // Updated monthly data points
           },
           energyBySource: [
             { label: 'Solar Energy', value: 31 },
@@ -157,63 +159,28 @@ const mockEnergyData: any = {
             { label: 'Generator', value: 27 },
           ],
           changeInUsage: {
-            categories: [
-              'Jan',
-              'Feb',
-              'Mar',
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-              'Nov',
-              'Dec',
-            ],
+            categories: ['2024', '2025'],
             data: [
               {
                 name: 'Consumption',
-                data: [
-                  18765, 17980, 19250, 18450, 17860, 18970, 19840, 18650, 17450, 16980, 17650,
-                  16005,
-                ],
+                data: [18765, 17980],
               },
               {
                 name: 'Generation',
-                data: [5630, 5394, 5968, 5904, 6072, 6261, 6341, 6153, 5759, 5264, 5295, 4802],
+                data: [5630, 5394],
               },
             ],
           },
           usageEstimate: {
-            categories: [
-              'Jan',
-              'Feb',
-              'Mar',
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-              'Nov',
-              'Dec',
-            ],
+            categories: ['2024', '2025'],
             series: [
               {
                 name: 'Last Year',
-                data: [
-                  16870, 16230, 17340, 16580, 16070, 17060, 17850, 16780, 15700, 15280, 15890,
-                  14400,
-                ],
+                data: [16870, 16230],
               },
               {
                 name: 'This Year',
-                data: [
-                  18765, 17980, 19250, 18450, 17860, 18970, 19840, 18650, 17450, 16980, 17650,
-                  16005,
-                ],
+                data: [18765, 17980],
               },
             ],
             percentChange: 12.4,
@@ -253,22 +220,22 @@ const mockEnergyData: any = {
             { label: 'Generator', value: 30 },
           ],
           changeInUsage: {
-            categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
+            categories: ['Today', 'Yesterday'],
             data: [
-              { name: 'Consumption', data: [34, 68, 95, 102, 114, 107, 95, 72] },
-              { name: 'Generation', data: [6, 12, 17, 16, 19, 17, 13, 7] },
+              { name: 'Consumption', data: [34, 68] },
+              { name: 'Generation', data: [6, 12] },
             ],
           },
           usageEstimate: {
-            categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
+            categories: ['Today', 'Yesterday'],
             series: [
               {
                 name: 'Actual',
-                data: [34, 68, 95, 102, 114, 107, 95, 72],
+                data: [95, 72],
               },
               {
                 name: 'Forecast',
-                data: [null, null, null, null, 118, 112, 98, 75],
+                data: [98, 75],
               },
             ],
             percentChange: 5.8,
@@ -309,14 +276,922 @@ const mockEnergyData: any = {
             { label: 'Generator', value: 25 },
           ],
           changeInUsage: {
-            categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+            categories: ['Mar', 'Apr'],
             data: [
-              { name: 'Consumption', data: [5970, 6120, 6340, 6220] },
-              { name: 'Generation', data: [1075, 1200, 1375, 1180] },
+              { name: 'Consumption', data: [5970, 6120] },
+              { name: 'Generation', data: [1075, 1200] },
             ],
           },
           usageEstimate: {
-            categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Next Week'],
+            categories: ['Mar', 'Apr'],
+            series: [
+              {
+                name: 'Actual',
+                data: [5970, 6120],
+              },
+              {
+                name: 'Forecast',
+                data: [6380, 6120],
+              },
+            ],
+            percentChange: 7.2,
+          },
+          costs: {
+            totalCost: 493000, // PKR
+            costBySource: {
+              'Solar Energy': 0,
+              '(WAPDA) - Electricity': 423225, // PKR
+              Generator: 69775, // PKR
+            },
+            costPerKWh: {
+              '(WAPDA) - Electricity': 31.2, // PKR per kWh
+              Generator: 42.6, // PKR per kWh (including fuel)
+            },
+          },
+        },
+        year: {
+          totalConsumption: {
+            value: 286500,
+            percentChange: 15.2,
+            chartData: [
+              22500, 21800, 23450, 24650, 25800, 27200, 26750, 25400, 24300, 23500, 21950, 19200,
+            ],
+          },
+          currentUsage: {
+            value: 19200,
+            percentChange: -12.5,
+            chartData: [
+              22500, 21800, 23450, 24650, 25800, 27200, 26750, 25400, 24300, 23500, 21950, 19200,
+            ],
+          },
+          energyBySource: [
+            { label: 'Solar Energy', value: 22 },
+            { label: '(WAPDA) - Electricity', value: 51 },
+            { label: 'Generator', value: 27 },
+          ],
+          changeInUsage: {
+            categories: ['2024', '2025'],
+            data: [
+              {
+                name: 'Consumption',
+                data: [22500, 21800],
+              },
+              {
+                name: 'Generation',
+                data: [4950, 4794],
+              },
+            ],
+          },
+          usageEstimate: {
+            categories: ['2024', '2025'],
+            series: [
+              {
+                name: 'Last Year',
+                data: [19550, 18966],
+              },
+              {
+                name: 'This Year',
+                data: [22500, 21800],
+              },
+            ],
+            percentChange: 15.2,
+          },
+          costs: {
+            totalCost: 5730000, // PKR
+            costBySource: {
+              'Solar Energy': 0,
+              '(WAPDA) - Electricity': 4560240, // PKR
+              Generator: 1169760, // PKR
+            },
+            averageCostPerKWh: {
+              '(WAPDA) - Electricity': 31.2, // PKR per kWh
+              Generator: 42.6, // PKR per kWh (including fuel)
+            },
+          },
+        },
+      },
+    ],
+    // Provincial aggregated data
+    aggregated: {
+      day: {
+        totalConsumption: {
+          value: 1607,
+          percentChange: 3.4,
+          chartData: [100, 150, 200, 250, 300, 350, 400, 450, 500, 550], // Updated hourly data points
+        },
+        currentUsage: {
+          value: 155,
+          percentChange: -1.2,
+          chartData: [50, 60, 70, 80, 90, 100, 110, 120, 130, 140], // Updated hourly data points
+        },
+        energyBySource: [
+          { label: 'Solar Energy', value: 20 },
+          { label: '(WAPDA) - Electricity', value: 50 },
+          { label: 'Generator', value: 30 },
+        ],
+        changeInUsage: {
+          categories: ['Today', 'Yesterday'],
+          data: [
+            { name: 'Consumption', data: [44, 109] },
+            { name: 'Generation', data: [11, 46] },
+          ],
+        },
+        usageEstimate: {
+          categories: ['Today', 'Yesterday'],
+          series: [
+            {
+              name: 'Actual',
+              data: [44, 109],
+            },
+            {
+              name: 'Forecast',
+              data: [170, 133],
+            },
+          ],
+          percentChange: 6.5,
+        },
+        costs: {
+          totalCost: 32982, // PKR
+          costBySource: {
+            'Solar Energy': 0,
+            '(WAPDA) - Electricity': 25100, // PKR
+            Generator: 7882, // PKR
+          },
+          costPerKWh: {
+            '(WAPDA) - Electricity': 31.2, // PKR per kWh
+            Generator: 42.6, // PKR per kWh (including fuel)
+          },
+        },
+      },
+      month: {
+        totalConsumption: {
+          value: 43415,
+          percentChange: 5.3,
+          chartData: [
+            600, 650, 700, 750, 800, 850, 900, 950, 1000, 1050, 1100, 1150, 1200, 1250, 1300, 1350,
+            1400, 1450, 1500, 1550, 1600, 1650, 1700, 1750, 1800, 1850, 1900, 1950, 2000,
+          ], // Updated daily data points
+        },
+        currentUsage: {
+          value: 1540,
+          percentChange: 1.7,
+          chartData: [
+            600, 620, 640, 660, 680, 700, 720, 740, 760, 780, 800, 820, 840, 860, 880, 900, 920,
+            940, 960, 980, 1000, 1020, 1040, 1060, 1080, 1100, 1120, 1140, 1160, 1180,
+          ], // Updated daily data points
+        },
+        energyBySource: [
+          { label: 'Solar Energy', value: 23 },
+          { label: '(WAPDA) - Electricity', value: 50 },
+          { label: 'Generator', value: 27 },
+        ],
+        changeInUsage: {
+          categories: ['Mar', 'Apr'],
+          data: [
+            { name: 'Consumption', data: [10950, 11360] },
+            { name: 'Generation', data: [2400, 2650] },
+          ],
+        },
+        usageEstimate: {
+          categories: ['Mar', 'Apr'],
+          series: [
+            {
+              name: 'Actual',
+              data: [10950, 11360],
+            },
+            {
+              name: 'Forecast',
+              data: [11330, 11360],
+            },
+          ],
+          percentChange: 6.2,
+        },
+        costs: {
+          totalCost: 868300, // PKR
+          costBySource: {
+            'Solar Energy': 0,
+            '(WAPDA) - Electricity': 686993, // PKR
+            Generator: 181307, // PKR
+          },
+          costPerKWh: {
+            '(WAPDA) - Electricity': 31.2, // PKR per kWh
+            Generator: 42.6, // PKR per kWh (including fuel)
+          },
+        },
+      },
+      year: {
+        totalConsumption: {
+          value: 504350,
+          percentChange: 13.8,
+          chartData: [
+            18000, 18500, 19000, 19500, 20000, 20500, 21000, 21500, 22000, 22500, 23000, 23500,
+          ], // Updated monthly data points
+        },
+        currentUsage: {
+          value: 35205,
+          percentChange: -9.2,
+          chartData: [
+            18000, 18500, 19000, 19500, 20000, 20500, 21000, 21500, 22000, 22500, 23000, 23500,
+          ], // Updated monthly data points
+        },
+        energyBySource: [
+          { label: 'Solar Energy', value: 27 },
+          { label: '(WAPDA) - Electricity', value: 46 },
+          { label: 'Generator', value: 27 },
+        ],
+        changeInUsage: {
+          categories: ['2024', '2025'],
+          data: [
+            { name: 'Consumption', data: [41265, 39780] },
+            { name: 'Generation', data: [10580, 10188] },
+          ],
+        },
+        usageEstimate: {
+          categories: ['2024', '2025'],
+          series: [
+            {
+              name: 'Last Year',
+              data: [36420, 35196, ,],
+            },
+            {
+              name: 'This Year',
+              data: [41265, 39780, ,],
+            },
+          ],
+          percentChange: 13.8,
+        },
+        costs: {
+          totalCost: 10087000, // PKR
+          costBySource: {
+            'Solar Energy': 0,
+            '(WAPDA) - Electricity': 7417590, // PKR
+            Generator: 2669410, // PKR
+          },
+          averageCostPerKWh: {
+            '(WAPDA) - Electricity': 31.2, // PKR per kWh
+            Generator: 42.6, // PKR per kWh (including fuel)
+          },
+        },
+      },
+    },
+  },
+  sindh: {
+    clients: [
+      {
+        id: 'client-sd-001',
+        name: 'Karachi Power Plant',
+        location: 'Karachi, Sindh',
+        day: {
+          totalConsumption: {
+            value: 982,
+            percentChange: 3.1,
+            chartData: [60, 75, 90, 115, 140, 170, 190, 175, 160, 140, 110, 85],
+          },
+          currentUsage: {
+            value: 91,
+            percentChange: -0.5,
+            chartData: [55, 72, 85, 108, 130, 150, 158, 145, 135, 122, 98, 80],
+          },
+          energyBySource: [
+            { label: 'Solar Energy', value: 28 },
+            { label: '(WAPDA) - Electricity', value: 47 },
+            { label: 'Generator', value: 25 },
+          ],
+          changeInUsage: {
+            categories: ['Today', 'Yesterday'],
+            data: [
+              { name: 'Consumption', data: [32, 58] },
+              { name: 'Generation', data: [8, 14] },
+            ],
+          },
+          usageEstimate: {
+            categories: ['Today', 'Yesterday'],
+            series: [
+              {
+                name: 'Actual',
+                data: [32, 58],
+              },
+              {
+                name: 'Forecast',
+                data: [91, 75],
+              },
+            ],
+            percentChange: 4.5,
+          },
+          costs: {
+            totalCost: 19820,
+            costBySource: {
+              'Solar Energy': 0,
+              '(WAPDA) - Electricity': 14700,
+              Generator: 5120,
+            },
+            costPerKWh: {
+              '(WAPDA) - Electricity': 31.2,
+              Generator: 42.6,
+            },
+          },
+        },
+        month: {
+          totalConsumption: {
+            value: 29450,
+            percentChange: 5.4,
+            chartData: [
+              1200, 1245, 1300, 1380, 1405, 1420, 1470, 1530, 1510, 1480, 1450, 1420, 1390, 1360,
+              1340, 1320, 1300, 1275, 1250, 1230, 1210, 1200, 1170, 1150, 1135, 1120, 1100, 1085,
+              1050, 1020,
+            ],
+          },
+          currentUsage: {
+            value: 898,
+            percentChange: 2.3,
+            chartData: [
+              1220, 1265, 1285, 1330, 1390, 1420, 1375, 1340, 1310, 1295, 1270, 1250, 1235, 1220,
+              1210, 1205, 1190, 1175, 1160, 1145, 1130, 1120, 1100, 1085, 1070, 1060, 1050, 1035,
+              1020, 1000,
+            ],
+          },
+          energyBySource: [
+            { label: 'Solar Energy', value: 25 },
+            { label: '(WAPDA) - Electricity', value: 50 },
+            { label: 'Generator', value: 25 },
+          ],
+          changeInUsage: {
+            categories: ['Mar', 'Apr'],
+            data: [
+              { name: 'Consumption', data: [6975, 7350] },
+              { name: 'Generation', data: [1225, 1375] },
+            ],
+          },
+          usageEstimate: {
+            categories: ['Mar', 'Apr'],
+            series: [
+              {
+                name: 'Actual',
+                data: [6975, 7350],
+              },
+              {
+                name: 'Forecast',
+                data: [7630, 7350],
+              },
+            ],
+            percentChange: 6.1,
+          },
+          costs: {
+            totalCost: 582900,
+            costBySource: {
+              'Solar Energy': 0,
+              '(WAPDA) - Electricity': 456000,
+              Generator: 126900,
+            },
+            costPerKWh: {
+              '(WAPDA) - Electricity': 31.2,
+              Generator: 42.6,
+            },
+          },
+        },
+        year: {
+          totalConsumption: {
+            value: 329000,
+            percentChange: 13.6,
+            chartData: [
+              17800, 18320, 18950, 19840, 20400, 21050, 21800, 22350, 22700, 23000, 23250, 23400,
+            ],
+          },
+          currentUsage: {
+            value: 23000,
+            percentChange: -11.5,
+            chartData: [
+              16800, 17300, 18000, 18850, 19400, 19850, 20300, 20850, 21300, 21750, 22100, 22350,
+            ],
+          },
+          energyBySource: [
+            { label: 'Solar Energy', value: 27 },
+            { label: '(WAPDA) - Electricity', value: 48 },
+            { label: 'Generator', value: 25 },
+          ],
+          changeInUsage: {
+            categories: ['2024', '2025'],
+            data: [
+              { name: 'Consumption', data: [25000, 26100] },
+              { name: 'Generation', data: [6750, 7000] },
+            ],
+          },
+          usageEstimate: {
+            categories: ['2024', '2025'],
+            series: [
+              {
+                name: 'Last Year',
+                data: [22200, 23280],
+              },
+              {
+                name: 'This Year',
+                data: [25000, 26100],
+              },
+            ],
+            percentChange: 13.6,
+          },
+          costs: {
+            totalCost: 6580000,
+            costBySource: {
+              'Solar Energy': 0,
+              '(WAPDA) - Electricity': 4987200,
+              Generator: 1592800,
+            },
+            averageCostPerKWh: {
+              '(WAPDA) - Electricity': 31.2,
+              Generator: 42.6,
+            },
+          },
+        },
+      },
+
+      {
+        id: 'client-sd-002',
+        name: 'Hyderabad Agro Industries',
+        location: 'Hyderabad, Sindh',
+        day: {
+          totalConsumption: {
+            value: 655,
+            percentChange: 2.4,
+            chartData: [60, 75, 90, 115, 140, 170, 190, 175, 160, 140, 110, 85],
+          },
+          currentUsage: {
+            value: 59,
+            percentChange: -1.0,
+            chartData: [55, 72, 85, 108, 130, 150, 158, 145, 135, 122, 98, 80],
+          },
+          energyBySource: [
+            { label: 'Solar Energy', value: 24 },
+            { label: '(WAPDA) - Electricity', value: 51 },
+            { label: 'Generator', value: 25 },
+          ],
+          changeInUsage: {
+            categories: ['Today', 'Yesterday'],
+            data: [
+              { name: 'Consumption', data: [28, 42] },
+              { name: 'Generation', data: [7, 12] },
+            ],
+          },
+          usageEstimate: {
+            categories: ['Today', 'Yesterday'],
+            series: [
+              {
+                name: 'Actual',
+                data: [28, 42],
+              },
+              {
+                name: 'Forecast',
+                data: [71, 52],
+              },
+            ],
+            percentChange: 4.1,
+          },
+          costs: {
+            totalCost: 13660,
+            costBySource: {
+              'Solar Energy': 0,
+              '(WAPDA) - Electricity': 10520,
+              Generator: 3140,
+            },
+            costPerKWh: {
+              '(WAPDA) - Electricity': 31.2,
+              Generator: 42.6,
+            },
+          },
+        },
+        // Similar structure for month and year...
+      },
+    ],
+    aggregated: {
+      day: {
+        totalConsumption: {
+          value: 1407,
+          percentChange: 2.9,
+          chartData: [26, 104, 106, 114, 174, 199, 183, 159, 141, 111],
+        },
+        currentUsage: {
+          value: 137,
+          percentChange: -1.5,
+          chartData: [107, 126, 140, 147, 137, 128, 130, 141, 155, 161],
+        },
+        energyBySource: [
+          { label: 'Solar Energy', value: 17 },
+          { label: '(WAPDA) - Electricity', value: 43 },
+          { label: 'Generator', value: 33 },
+        ],
+        changeInUsage: {
+          categories: ['Mar', 'Apr'],
+          data: [
+            { name: 'Consumption', data: [41, 97] },
+            { name: 'Generation', data: [17, 49] },
+          ],
+        },
+        usageEstimate: {
+          categories: ['Today', 'Yesterday'],
+          series: [
+            {
+              name: 'Actual',
+              data: [44, 109],
+            },
+            {
+              name: 'Forecast',
+              data: [170, 133],
+            },
+          ],
+          percentChange: 6.5,
+        },
+        costs: {
+          totalCost: 27982, // PKR
+          costBySource: {
+            'Solar Energy': 0,
+            '(WAPDA) - Electricity': 23100, // PKR
+            Generator: 4882, // PKR
+          },
+          costPerKWh: {
+            '(WAPDA) - Electricity': 31.9, // PKR per kWh
+            Generator: 42.9, // PKR per kWh (including fuel)
+          },
+        },
+      },
+      month: {
+        totalConsumption: {
+          value: 27212,
+          percentChange: 5.33,
+          chartData: [
+            1200, 1245, 1300, 1380, 1405, 1420, 1470, 1530, 1510, 1480, 1450, 1420, 1390, 1360,
+            1340, 1320, 1300, 1275, 1250, 1230, 1210, 1200, 1170, 1150, 1135, 1120, 1100, 1085,
+            1050, 1020,
+          ],
+        },
+        currentUsage: {
+          value: 899,
+          percentChange: 2.7,
+          chartData: [
+            1180, 1215, 1260, 1320, 1340, 1380, 1400, 1450, 1430, 1400, 1370, 1350, 1330, 1300,
+            1285, 1270, 1250, 1225, 1200, 1185, 1160, 1150, 1130, 1115, 1095, 1080, 1060, 1045,
+            1025, 1010,
+          ],
+        },
+        energyBySource: [
+          { label: 'Solar Energy', value: 21 },
+          { label: '(WAPDA) - Electricity', value: 59 },
+          { label: 'Generator', value: 29 },
+        ],
+        changeInUsage: {
+          categories: ['2024', '2025'],
+
+          data: [
+            { name: 'Consumption', data: [6370, 6720] },
+            { name: 'Generation', data: [1115, 1301] },
+          ],
+        },
+        usageEstimate: {
+          categories: ['Mar', 'Apr'],
+          series: [
+            {
+              name: 'Actual',
+              data: [6970, 6320],
+            },
+            {
+              name: 'Forecast',
+              data: [6380, 6320],
+            },
+          ],
+          percentChange: 7.2,
+        },
+        costs: {
+          totalCost: 493000, // PKR
+          costBySource: {
+            'Solar Energy': 0,
+            '(WAPDA) - Electricity': 423225, // PKR
+            Generator: 69775, // PKR
+          },
+          costPerKWh: {
+            '(WAPDA) - Electricity': 31.2, // PKR per kWh
+            Generator: 42.6, // PKR per kWh (including fuel)
+          },
+        },
+      },
+      year: {
+        totalConsumption: {
+          value: 286500,
+          percentChange: 15.2,
+          chartData: [
+            17200, 17800, 18400, 19300, 19950, 20400, 21000, 21600, 22200, 22550, 22800, 23000,
+          ],
+        },
+        currentUsage: {
+          value: 19200,
+          percentChange: -12.5,
+          chartData: [
+            16800, 17300, 18000, 18850, 19400, 19850, 20300, 20850, 21300, 21750, 22100, 22350,
+          ],
+        },
+        energyBySource: [
+          { label: 'Solar Energy', value: 22 },
+          { label: '(WAPDA) - Electricity', value: 51 },
+          { label: 'Generator', value: 27 },
+        ],
+        changeInUsage: {
+          categories: ['2024', '2025'],
+          data: [
+            {
+              name: 'Consumption',
+              data: [22500, 21800],
+            },
+            {
+              name: 'Generation',
+              data: [4950, 4794],
+            },
+          ],
+        },
+        usageEstimate: {
+          categories: ['2024', '2025'],
+          series: [
+            {
+              name: 'Last Year',
+              data: [19550, 18966, ,],
+            },
+            {
+              name: 'This Year',
+              data: [22500, 21800, ,],
+            },
+          ],
+          percentChange: 15.2,
+        },
+        costs: {
+          totalCost: 5730000, // PKR
+          costBySource: {
+            'Solar Energy': 0,
+            '(WAPDA) - Electricity': 4560240, // PKR
+            Generator: 1169760, // PKR
+          },
+          averageCostPerKWh: {
+            '(WAPDA) - Electricity': 31.2, // PKR per kWh
+            Generator: 42.6, // PKR per kWh (including fuel)
+          },
+        },
+      },
+    },
+  },
+  islamabad: {
+    clients: [
+      {
+        id: 'client-pb-001',
+        name: 'Lahore Industrial Complex',
+        location: 'Lahore, Punjab',
+        day: {
+          totalConsumption: {
+            value: 765,
+            percentChange: 2.6,
+            chartData: [30, 40, 55, 70, 90, 105, 110, 100, 90, 85, 78, 65], // hourly data points
+          },
+          currentUsage: {
+            value: 83,
+            percentChange: -0.1,
+            chartData: [28, 38, 52, 67, 85, 98, 104, 96, 88, 82, 75, 60], // hourly data points
+          },
+          energyBySource: [
+            { label: 'Solar Energy', value: 22 },
+            { label: '(WAPDA) - Electricity', value: 48 },
+            { label: 'Generator', value: 30 },
+          ],
+          changeInUsage: {
+            categories: ['Today', 'Yesterday'],
+            data: [
+              { name: 'Consumption', data: [10, 41] },
+              { name: 'Generation', data: [5, 34] },
+            ],
+          },
+          usageEstimate: {
+            categories: ['Today', 'Yesterday'],
+            series: [
+              {
+                name: 'Actual',
+                data: [22, 41],
+              },
+              {
+                name: 'Forecast',
+                data: [null, 58],
+              },
+            ],
+            percentChange: 7.3,
+          },
+          costs: {
+            totalCost: 15300, // PKR
+            costBySource: {
+              'Solar Energy': 0, // Free after installation
+              '(WAPDA) - Electricity': 11424, // PKR
+              Generator: 3876, // PKR
+            },
+            costPerKWh: {
+              '(WAPDA) - Electricity': 31.2, // PKR per kWh
+              Generator: 42.6, // PKR per kWh (including fuel)
+            },
+          },
+        },
+        month: {
+          totalConsumption: {
+            value: 18765,
+            percentChange: 3.8,
+            chartData: [
+              900, 950, 980, 1020, 1060, 1100, 1120, 1140, 1120, 1100, 1080, 1060, 1040, 1020, 1000,
+              980, 960, 940, 920, 910, 900, 880, 860, 840, 820, 800, 780, 770, 750, 740,
+            ],
+          },
+          currentUsage: {
+            value: 698,
+            percentChange: 1.2,
+            chartData: [
+              880, 920, 960, 1000, 1040, 1080, 1100, 1120, 1100, 1080, 1060, 1040, 1020, 1000, 980,
+              960, 940, 920, 900, 890, 880, 860, 840, 820, 800, 780, 760, 750, 735, 720,
+            ],
+          },
+          energyBySource: [
+            { label: 'Solar Energy', value: 26 },
+            { label: '(WAPDA) - Electricity', value: 45 },
+            { label: 'Generator', value: 29 },
+          ],
+          changeInUsage: {
+            categories: ['Mar', 'Apr'],
+            data: [
+              { name: 'Consumption', data: [4980, 5240] },
+              { name: 'Generation', data: [1325, 1450] },
+            ],
+          },
+          usageEstimate: {
+            categories: ['Mar', 'Apr'],
+            series: [
+              {
+                name: 'Actual',
+                data: [4980, 5240],
+              },
+              {
+                name: 'Forecast',
+                data: [null, 5240],
+              },
+            ],
+            percentChange: 5.2,
+          },
+          costs: {
+            totalCost: 375300, // PKR
+            costBySource: {
+              'Solar Energy': 0, // Free after installation
+              '(WAPDA) - Electricity': 263768, // PKR
+              Generator: 111532, // PKR
+            },
+            costPerKWh: {
+              '(WAPDA) - Electricity': 31.2, // PKR per kWh
+              Generator: 42.6, // PKR per kWh (including fuel)
+            },
+          },
+        },
+        year: {
+          totalConsumption: {
+            value: 217850,
+            percentChange: 12.4,
+            chartData: [
+              12200, 12600, 13000, 13400, 13800, 14100, 14400, 14800, 15100, 15350, 15600, 15800
+            ],
+          },
+          currentUsage: {
+            value: 16005,
+            percentChange: -5.8,
+            chartData: [
+              12000, 12400, 12800, 13200, 13600, 13900, 14200, 14550, 14900, 15150, 15400, 15600
+            ],
+          },
+          energyBySource: [
+            { label: 'Solar Energy', value: 31 },
+            { label: '(WAPDA) - Electricity', value: 42 },
+            { label: 'Generator', value: 27 },
+          ],
+          changeInUsage: {
+            categories: ['2024', '2025'],
+            data: [
+              {
+                name: 'Consumption',
+                data: [18765, 17980],
+              },
+              {
+                name: 'Generation',
+                data: [5630, 5394],
+              },
+            ],
+          },
+          usageEstimate: {
+            categories: ['2024', '2025'],
+            series: [
+              {
+                name: 'Last Year',
+                data: [16870, 16230],
+              },
+              {
+                name: 'This Year',
+                data: [18765, 17980],
+              },
+            ],
+            percentChange: 12.4,
+          },
+          costs: {
+            totalCost: 4357000, // PKR
+            costBySource: {
+              'Solar Energy': 0, // Free after installation
+              '(WAPDA) - Electricity': 2857350, // PKR
+              Generator: 1499650, // PKR
+            },
+            averageCostPerKWh: {
+              '(WAPDA) - Electricity': 31.2, // PKR per kWh
+              Generator: 42.6, // PKR per kWh (including fuel)
+            },
+          },
+        },
+      },
+      {
+        id: 'client-pb-002',
+        name: 'Faisalabad Textile Mills',
+        location: 'Faisalabad, Punjab',
+        day: {
+          totalConsumption: {
+            value: 842,
+            percentChange: 4.2,
+            chartData: [30, 40, 55, 70, 90, 105, 110, 100, 90, 85, 78, 65],
+          },
+          currentUsage: {
+            value: 72,
+            percentChange: -2.1,
+            chartData: [28, 38, 52, 67, 85, 98, 104, 96, 88, 82, 75, 60],
+          },
+          energyBySource: [
+            { label: 'Solar Energy', value: 18 },
+            { label: '(WAPDA) - Electricity', value: 52 },
+            { label: 'Generator', value: 30 },
+          ],
+          changeInUsage: {
+            categories: ['Today', 'Tomorrow'],
+            data: [
+              { name: 'Consumption', data: [34, 68] },
+              { name: 'Generation', data: [6, 12] },
+            ],
+          },
+          usageEstimate: {
+            categories: ['Today', 'Tomorrow'],
+            series: [
+              {
+                name: 'Actual',
+                data: [34, 68],
+              },
+              {
+                name: 'Forecast',
+                data: [null, 112],
+              },
+            ],
+            percentChange: 5.8,
+          },
+          costs: {
+            totalCost: 17682, // PKR
+            costBySource: {
+              'Solar Energy': 0,
+              '(WAPDA) - Electricity': 13676, // PKR
+              Generator: 4006, // PKR
+            },
+            costPerKWh: {
+              '(WAPDA) - Electricity': 31.2, // PKR per kWh
+              Generator: 42.6, // PKR per kWh (including fuel)
+            },
+          },
+        },
+        month: {
+          totalConsumption: {
+            value: 24650,
+            percentChange: 6.8,
+            chartData: [
+              712, 765, 828, 875, 842, 798, 765, 812, 845, 872, 835, 805, 778, 802, 834, 867, 842,
+              815, 787, 762, 787, 812, 845, 878, 842, 815, 787, 798, 825, 842,
+            ],
+          },
+          currentUsage: {
+            value: 842,
+            percentChange: 2.2,
+            chartData: [
+              765, 798, 825, 842, 825, 798, 765, 742, 765, 798, 825, 842, 825, 798, 765, 742, 765,
+              798, 825, 842, 825, 798, 765, 742, 765, 798, 825, 842, 825, 798,
+            ],
+          },
+          energyBySource: [
+            { label: 'Solar Energy', value: 20 },
+            { label: '(WAPDA) - Electricity', value: 55 },
+            { label: 'Generator', value: 25 },
+          ],
+          changeInUsage: {
+            categories: ['Mar', 'Apr'],
+            data: [
+              { name: 'Consumption', data: [5970, 6120] },
+              { name: 'Generation', data: [1075, 1200] },
+            ],
+          },
+          usageEstimate: {
+            categories: ['Mar', 'Apr'],
             series: [
               {
                 name: 'Actual',
@@ -363,63 +1238,28 @@ const mockEnergyData: any = {
             { label: 'Generator', value: 27 },
           ],
           changeInUsage: {
-            categories: [
-              'Jan',
-              'Feb',
-              'Mar',
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-              'Nov',
-              'Dec',
-            ],
+            categories: ['2024', '2025'],
             data: [
               {
                 name: 'Consumption',
-                data: [
-                  22500, 21800, 23450, 24650, 25800, 27200, 26750, 25400, 24300, 23500, 21950,
-                  19200,
-                ],
+                data: [22500, 21800],
               },
               {
                 name: 'Generation',
-                data: [4950, 4794, 5159, 5423, 5676, 5984, 5885, 5588, 5346, 5170, 4829, 4224],
+                data: [4950, 4794],
               },
             ],
           },
           usageEstimate: {
-            categories: [
-              'Jan',
-              'Feb',
-              'Mar',
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-              'Nov',
-              'Dec',
-            ],
+            categories: ['2024', '2025'],
             series: [
               {
                 name: 'Last Year',
-                data: [
-                  19550, 18966, 20402, 21446, 22446, 23664, 23273, 22098, 21141, 20445, 19097,
-                  16704,
-                ],
+                data: [19550, 18966],
               },
               {
                 name: 'This Year',
-                data: [
-                  22500, 21800, 23450, 24650, 25800, 27200, 26750, 25400, 24300, 23500, 21950,
-                  19200,
-                ],
+                data: [22500, 21800],
               },
             ],
             percentChange: 15.2,
@@ -443,47 +1283,47 @@ const mockEnergyData: any = {
     aggregated: {
       day: {
         totalConsumption: {
-          value: 1607,
-          percentChange: 3.4,
-          chartData: [56, 126, 140, 164, 184, 208, 194, 167, 150, 115],
+          value: 765,
+          percentChange: 2.6,
+          chartData: [22, 58, 65, 72, 82, 94, 87, 72, 67, 43], // hourly data points
         },
         currentUsage: {
-          value: 155,
-          percentChange: -1.2,
-          chartData: [118, 146, 160, 155, 147, 138, 128, 130, 141, 155],
+          value: 83,
+          percentChange: -0.1,
+          chartData: [56, 67, 72, 62, 58, 54, 49, 54, 67, 68], // hourly data points
         },
         energyBySource: [
-          { label: 'Solar Energy', value: 20 },
-          { label: '(WAPDA) - Electricity', value: 50 },
+          { label: 'Solar Energy', value: 22 },
+          { label: '(WAPDA) - Electricity', value: 48 },
           { label: 'Generator', value: 30 },
         ],
         changeInUsage: {
           categories: ['Today', 'Yesterday'],
           data: [
-            { name: 'Consumption', data: [44, 109] },
-            { name: 'Generation', data: [11, 46] },
+            { name: 'Consumption', data: [10, 41] },
+            { name: 'Generation', data: [5, 34] },
           ],
         },
         usageEstimate: {
-          categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
+          categories: ['Today', 'Yesterday'],
           series: [
             {
               name: 'Actual',
-              data: [44, 109, 160, 153, 163, 169, 164, 123],
+              data: [22, 41],
             },
             {
               name: 'Forecast',
-              data: [null, null, null, null, 170, 177, 170, 133],
+              data: [null, 58],
             },
           ],
-          percentChange: 6.5,
+          percentChange: 7.3,
         },
         costs: {
-          totalCost: 32982, // PKR
+          totalCost: 15300, // PKR
           costBySource: {
-            'Solar Energy': 0,
-            '(WAPDA) - Electricity': 25100, // PKR
-            Generator: 7882, // PKR
+            'Solar Energy': 0, // Free after installation
+            '(WAPDA) - Electricity': 11424, // PKR
+            Generator: 3876, // PKR
           },
           costPerKWh: {
             '(WAPDA) - Electricity': 31.2, // PKR per kWh
@@ -493,55 +1333,53 @@ const mockEnergyData: any = {
       },
       month: {
         totalConsumption: {
-          value: 43415,
-          percentChange: 5.3,
+          value: 18765,
+          percentChange: 3.8,
           chartData: [
-            1277, 1453, 1553, 1537, 1440, 1432, 1484, 1554, 1522, 1525, 1456, 1448, 1480, 1534,
-            1599, 1589, 1531, 1470, 1459, 1450, 1499, 1547, 1523, 1523, 1480, 1449, 1465, 1521,
-            1570, 1540,
+            565, 688, 725, 662, 598, 634, 719, 742, 677, 653, 621, 643, 702, 732, 765, 722, 689,
+            655, 672, 688, 712, 735, 678, 645, 590, 634, 678, 723, 745, 698,
           ],
         },
         currentUsage: {
-          value: 1540,
-          percentChange: 1.7,
+          value: 698,
+          percentChange: 1.2,
           chartData: [
-            1330, 1386, 1450, 1504, 1523, 1532, 1484, 1444, 1442, 1451, 1446, 1485, 1487, 1480,
-            1460, 1464, 1474, 1473, 1429, 1380, 1407, 1473, 1523, 1567, 1532, 1489, 1445, 1471,
-            1523, 1540,
+            565, 588, 625, 662, 698, 734, 719, 702, 677, 653, 621, 643, 662, 682, 695, 722, 709,
+            675, 642, 618, 642, 675, 698, 725, 690, 674, 658, 673, 698, 713,
           ],
         },
         energyBySource: [
-          { label: 'Solar Energy', value: 23 },
-          { label: '(WAPDA) - Electricity', value: 50 },
-          { label: 'Generator', value: 27 },
+          { label: 'Solar Energy', value: 26 },
+          { label: '(WAPDA) - Electricity', value: 45 },
+          { label: 'Generator', value: 29 },
         ],
         changeInUsage: {
           categories: ['Mar', 'Apr'],
           data: [
-            { name: 'Consumption', data: [10950, 11360] },
-            { name: 'Generation', data: [2400, 2650] },
+            { name: 'Consumption', data: [4980, 5240] },
+            { name: 'Generation', data: [1325, 1450] },
           ],
         },
         usageEstimate: {
-          categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Next Week'],
+          categories: ['Mar', 'Apr'],
           series: [
             {
               name: 'Actual',
-              data: [10950, 11360, 11200, 9905, null],
+              data: [4980, 5240, 4860, 3685, null],
             },
             {
               name: 'Forecast',
-              data: [null, null, null, null, 11330],
+              data: [null, null, null, null, 4950],
             },
           ],
-          percentChange: 6.2,
+          percentChange: 5.2,
         },
         costs: {
-          totalCost: 868300, // PKR
+          totalCost: 375300, // PKR
           costBySource: {
-            'Solar Energy': 0,
-            '(WAPDA) - Electricity': 686993, // PKR
-            Generator: 181307, // PKR
+            'Solar Energy': 0, // Free after installation
+            '(WAPDA) - Electricity': 263768, // PKR
+            Generator: 111532, // PKR
           },
           costPerKWh: {
             '(WAPDA) - Electricity': 31.2, // PKR per kWh
@@ -551,68 +1389,57 @@ const mockEnergyData: any = {
       },
       year: {
         totalConsumption: {
-          value: 504350,
-          percentChange: 13.8,
+          value: 217850,
+          percentChange: 12.4,
           chartData: [
-            41265, 39780, 42700, 43100, 43660, 46170, 46590, 44050, 41750, 40480, 39600, 35205,
+            18765, 17980, 19250, 18450, 17860, 18970, 19840, 18650, 17450, 16980, 17650, 16005,
           ],
         },
         currentUsage: {
-          value: 35205,
-          percentChange: -9.2,
+          value: 16005,
+          percentChange: -5.8,
           chartData: [
-            41265, 39780, 42700, 43100, 43660, 46170, 46590, 44050, 41750, 40480, 39600, 35205,
+            18765, 17980, 19250, 18450, 17860, 18970, 19840, 18650, 17450, 16980, 17650, 16005,
           ],
         },
         energyBySource: [
-          { label: 'Solar Energy', value: 27 },
-          { label: '(WAPDA) - Electricity', value: 46 },
+          { label: 'Solar Energy', value: 31 },
+          { label: '(WAPDA) - Electricity', value: 42 },
           { label: 'Generator', value: 27 },
         ],
         changeInUsage: {
           categories: ['2024', '2025'],
           data: [
-            { name: 'Consumption', data: [41265, 39780] },
-            { name: 'Generation', data: [10580, 10188] },
+            {
+              name: 'Consumption',
+              data: [18765, 17980],
+            },
+            {
+              name: 'Generation',
+              data: [5630, 5394],
+            },
           ],
         },
         usageEstimate: {
-          categories: [
-            'Jan',
-            'Feb',
-            'Mar',
-            'Apr',
-            'May',
-            'Jun',
-            'Jul',
-            'Aug',
-            'Sep',
-            'Oct',
-            'Nov',
-            'Dec',
-          ],
+          categories: ['2024', '2025'],
           series: [
             {
               name: 'Last Year',
-              data: [
-                36420, 35196, 37742, 38026, 38541, 40775, 41123, 38916, 36894, 35743, 34975, 31104,
-              ],
+              data: [16870, 16230],
             },
             {
               name: 'This Year',
-              data: [
-                41265, 39780, 42700, 43100, 43660, 46170, 46590, 44050, 41750, 40480, 39600, 35205,
-              ],
+              data: [18765, 17980],
             },
           ],
-          percentChange: 13.8,
+          percentChange: 12.4,
         },
         costs: {
-          totalCost: 10087000, // PKR
+          totalCost: 4357000, // PKR
           costBySource: {
-            'Solar Energy': 0,
-            '(WAPDA) - Electricity': 7417590, // PKR
-            Generator: 2669410, // PKR
+            'Solar Energy': 0, // Free after installation
+            '(WAPDA) - Electricity': 2857350, // PKR
+            Generator: 1499650, // PKR
           },
           averageCostPerKWh: {
             '(WAPDA) - Electricity': 31.2, // PKR per kWh
@@ -622,7 +1449,7 @@ const mockEnergyData: any = {
       },
     },
   },
-  sindh: {
+  balochistan: {
     clients: [
       {
         id: 'client-sd-001',
@@ -632,12 +1459,12 @@ const mockEnergyData: any = {
           totalConsumption: {
             value: 982,
             percentChange: 3.1,
-            chartData: [45, 62, 78, 85, 97, 105, 98, 92, 84, 76],
+            chartData: [18, 22, 30, 35, 42, 55, 60, 58, 50, 45, 40, 35],
           },
           currentUsage: {
             value: 91,
             percentChange: -0.5,
-            chartData: [67, 73, 78, 81, 76, 70, 65, 63, 69, 72],
+            chartData: [16, 20, 28, 32, 39, 48, 55, 52, 45, 41, 36, 31],
           },
           energyBySource: [
             { label: 'Solar Energy', value: 28 },
@@ -652,15 +1479,15 @@ const mockEnergyData: any = {
             ],
           },
           usageEstimate: {
-            categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
+            categories: ['Today', 'Yesterday'],
             series: [
               {
                 name: 'Actual',
-                data: [32, 58, 79, 86, 91, 95, 88, 72],
+                data: [32, 58],
               },
               {
                 name: 'Forecast',
-                data: [null, null, null, null, 96, 100, 91, 75],
+                data: [null, 75],
               },
             ],
             percentChange: 4.5,
@@ -683,16 +1510,16 @@ const mockEnergyData: any = {
             value: 29450,
             percentChange: 5.4,
             chartData: [
-              812, 845, 875, 902, 967, 1010, 982, 934, 915, 878, 845, 812, 799, 823, 857, 894, 872,
-              847, 818, 795, 821, 855, 890, 912, 873, 845, 813, 829, 864, 898,
+              450, 480, 500, 530, 550, 570, 590, 610, 600, 580, 560, 545, 530, 510,
+               500, 490, 480, 470, 460, 455, 450, 440, 430, 425, 420, 410, 400, 395, 390, 385
             ],
           },
           currentUsage: {
             value: 898,
             percentChange: 2.3,
             chartData: [
-              845, 870, 893, 918, 941, 976, 958, 933, 912, 898, 881, 869, 857, 842, 828, 811, 795,
-              779, 765, 754, 742, 730, 715, 704, 693, 682, 670, 659, 648, 637,
+              430, 460, 480, 510, 530, 550, 570, 590, 580, 560, 545, 530, 515, 500, 490,
+               475, 465, 455, 445, 440, 430, 420, 410, 405, 400, 390, 385, 380, 375, 370
             ],
           },
           energyBySource: [
@@ -708,15 +1535,15 @@ const mockEnergyData: any = {
             ],
           },
           usageEstimate: {
-            categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Next Week'],
+            categories: ['Mar', 'Apr'],
             series: [
               {
                 name: 'Actual',
-                data: [6975, 7350, 7680, 7445, null],
+                data: [6975, 7350],
               },
               {
                 name: 'Forecast',
-                data: [null, null, null, null, 7630],
+                data: [null, 7630],
               },
             ],
             percentChange: 6.1,
@@ -739,14 +1566,14 @@ const mockEnergyData: any = {
             value: 329000,
             percentChange: 13.6,
             chartData: [
-              25000, 26100, 27300, 28500, 29800, 31000, 30350, 29100, 27800, 26900, 25650, 23000,
+              5800, 5900, 6000, 6150, 6250, 6350, 6500, 6600, 6700, 6800, 6900, 7000
             ],
           },
           currentUsage: {
             value: 23000,
             percentChange: -11.5,
             chartData: [
-              25000, 26100, 27300, 28500, 29800, 31000, 30350, 29100, 27800, 26900, 25650, 23000,
+              5700, 5800, 5900, 6050, 6150, 6250, 6400, 6500, 6600, 6700, 6800, 6900
             ],
           },
           energyBySource: [
@@ -762,34 +1589,15 @@ const mockEnergyData: any = {
             ],
           },
           usageEstimate: {
-            categories: [
-              'Jan',
-              'Feb',
-              'Mar',
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-              'Nov',
-              'Dec',
-            ],
+            categories: ['2024', '2025'],
             series: [
               {
                 name: 'Last Year',
-                data: [
-                  22200, 23280, 24320, 25400, 26520, 27640, 27080, 26080, 24800, 23940, 22800,
-                  20400,
-                ],
+                data: [22200, 23280],
               },
               {
                 name: 'This Year',
-                data: [
-                  25000, 26100, 27300, 28500, 29800, 31000, 30350, 29100, 27800, 26900, 25650,
-                  23000,
-                ],
+                data: [25000, 26100],
               },
             ],
             percentChange: 13.6,
@@ -837,1100 +1645,15 @@ const mockEnergyData: any = {
             ],
           },
           usageEstimate: {
-            categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
+            categories: ['Today', 'Yesterday'],
             series: [
               {
                 name: 'Actual',
-                data: [28, 42, 53, 61, 67, 73, 68, 50],
+                data: [28, 42],
               },
               {
                 name: 'Forecast',
-                data: [null, null, null, null, 69, 75, 71, 52],
-              },
-            ],
-            percentChange: 4.1,
-          },
-          costs: {
-            totalCost: 13660,
-            costBySource: {
-              'Solar Energy': 0,
-              '(WAPDA) - Electricity': 10520,
-              Generator: 3140,
-            },
-            costPerKWh: {
-              '(WAPDA) - Electricity': 31.2,
-              Generator: 42.6,
-            },
-          },
-        },
-        // Similar structure for month and year...
-      },
-    ],
-    aggregated: {
-      day: {
-        totalConsumption: {
-          value: 1407,
-          percentChange: 2.9,
-          chartData: [26, 104, 106, 114, 174, 199, 183, 159, 141, 111],
-        },
-        currentUsage: {
-          value: 137,
-          percentChange: -1.5,
-          chartData: [107, 126, 140, 147, 137, 128, 130, 141, 155, 161],
-        },
-        energyBySource: [
-          { label: 'Solar Energy', value: 17 },
-          { label: '(WAPDA) - Electricity', value: 43 },
-          { label: 'Generator', value: 33 },
-        ],
-        changeInUsage: {
-          categories: ['Mar', 'Apr'],
-          data: [
-            { name: 'Consumption', data: [41, 97] },
-            { name: 'Generation', data: [17, 49] },
-          ],
-        },
-        usageEstimate: {
-          categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
-          series: [
-            {
-              name: 'Actual',
-              data: [44, 109, 160, 153, 163, 169, 164, 123],
-            },
-            {
-              name: 'Forecast',
-              data: [null, null, null, null, 170, 177, 170, 133],
-            },
-          ],
-          percentChange: 6.5,
-        },
-        costs: {
-          totalCost: 27982, // PKR
-          costBySource: {
-            'Solar Energy': 0,
-            '(WAPDA) - Electricity': 23100, // PKR
-            Generator: 4882, // PKR
-          },
-          costPerKWh: {
-            '(WAPDA) - Electricity': 31.9, // PKR per kWh
-            Generator: 42.9, // PKR per kWh (including fuel)
-          },
-        },
-      },
-      month: {
-        totalConsumption: {
-          value: 27212,
-          percentChange: 5.33,
-          chartData: [
-            867, 842, 815, 787, 845, 872, 835, 802, 834, 762, 787, 812, 845, 878, 842, 815, 805,
-            778, 787, 798, 825, 712, 765, 828, 875, 842, 798, 765, 812, 842,
-          ],
-        },
-        currentUsage: {
-          value: 899,
-          percentChange: 2.7,
-          chartData: [
-            798, 825, 842, 765, 742, 765, 742, 765, 825, 798, 765, 798, 825, 842, 825, 798, 798,
-            825, 765, 798, 825, 842, 825, 798, 765, 742, 765, 842, 825, 798,
-          ],
-        },
-        energyBySource: [
-          { label: 'Solar Energy', value: 21 },
-          { label: '(WAPDA) - Electricity', value: 59 },
-          { label: 'Generator', value: 29 },
-        ],
-        changeInUsage: {
-          categories: ['2024', '2025'],
-
-          data: [
-            { name: 'Consumption', data: [6370, 6720] },
-            { name: 'Generation', data: [1115, 1301] },
-          ],
-        },
-        usageEstimate: {
-          categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Next Week'],
-          series: [
-            {
-              name: 'Actual',
-              data: [6970, 6320, 5940, 6211, null],
-            },
-            {
-              name: 'Forecast',
-              data: [null, null, null, null, 6380],
-            },
-          ],
-          percentChange: 7.2,
-        },
-        costs: {
-          totalCost: 493000, // PKR
-          costBySource: {
-            'Solar Energy': 0,
-            '(WAPDA) - Electricity': 423225, // PKR
-            Generator: 69775, // PKR
-          },
-          costPerKWh: {
-            '(WAPDA) - Electricity': 31.2, // PKR per kWh
-            Generator: 42.6, // PKR per kWh (including fuel)
-          },
-        },
-      },
-      year: {
-        totalConsumption: {
-          value: 286500,
-          percentChange: 15.2,
-          chartData: [
-            22500, 21800, 23450, 24650, 25800, 27200, 26750, 25400, 24300, 23500, 21950, 19200,
-          ],
-        },
-        currentUsage: {
-          value: 19200,
-          percentChange: -12.5,
-          chartData: [
-            22500, 21800, 23450, 24650, 25800, 27200, 26750, 25400, 24300, 23500, 21950, 19200,
-          ],
-        },
-        energyBySource: [
-          { label: 'Solar Energy', value: 22 },
-          { label: '(WAPDA) - Electricity', value: 51 },
-          { label: 'Generator', value: 27 },
-        ],
-        changeInUsage: {
-          categories: [
-            'Jan',
-            'Feb',
-            'Mar',
-            'Apr',
-            'May',
-            'Jun',
-            'Jul',
-            'Aug',
-            'Sep',
-            'Oct',
-            'Nov',
-            'Dec',
-          ],
-          data: [
-            {
-              name: 'Consumption',
-              data: [
-                22500, 21800, 23450, 24650, 25800, 27200, 26750, 25400, 24300, 23500, 21950, 19200,
-              ],
-            },
-            {
-              name: 'Generation',
-              data: [4950, 4794, 5159, 5423, 5676, 5984, 5885, 5588, 5346, 5170, 4829, 4224],
-            },
-          ],
-        },
-        usageEstimate: {
-          categories: [
-            'Jan',
-            'Feb',
-            'Mar',
-            'Apr',
-            'May',
-            'Jun',
-            'Jul',
-            'Aug',
-            'Sep',
-            'Oct',
-            'Nov',
-            'Dec',
-          ],
-          series: [
-            {
-              name: 'Last Year',
-              data: [
-                19550, 18966, 20402, 21446, 22446, 23664, 23273, 22098, 21141, 20445, 19097, 16704,
-              ],
-            },
-            {
-              name: 'This Year',
-              data: [
-                22500, 21800, 23450, 24650, 25800, 27200, 26750, 25400, 24300, 23500, 21950, 19200,
-              ],
-            },
-          ],
-          percentChange: 15.2,
-        },
-        costs: {
-          totalCost: 5730000, // PKR
-          costBySource: {
-            'Solar Energy': 0,
-            '(WAPDA) - Electricity': 4560240, // PKR
-            Generator: 1169760, // PKR
-          },
-          averageCostPerKWh: {
-            '(WAPDA) - Electricity': 31.2, // PKR per kWh
-            Generator: 42.6, // PKR per kWh (including fuel)
-          },
-        },
-      },
-    },
-  },
-  islamabad: {
-    clients: [
-      {
-        id: 'client-pb-001',
-        name: 'Lahore Industrial Complex',
-        location: 'Lahore, Punjab',
-        day: {
-          totalConsumption: {
-            value: 765,
-            percentChange: 2.6,
-            chartData: [22, 58, 65, 72, 82, 94, 87, 72, 67, 43], // hourly data points
-          },
-          currentUsage: {
-            value: 83,
-            percentChange: -0.1,
-            chartData: [56, 67, 72, 62, 58, 54, 49, 54, 67, 68], // hourly data points
-          },
-          energyBySource: [
-            { label: 'Solar Energy', value: 22 },
-            { label: '(WAPDA) - Electricity', value: 48 },
-            { label: 'Generator', value: 30 },
-          ],
-          changeInUsage: {
-            categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
-            data: [
-              { name: 'Consumption', data: [10, 41, 65, 51, 49, 62, 69, 51] },
-              { name: 'Generation', data: [5, 34, 23, 56, 47, 38, 29, 17] },
-            ],
-          },
-          usageEstimate: {
-            categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
-            series: [
-              {
-                name: 'Actual',
-                data: [22, 41, 65, 51, 49, 62, 69, 51],
-              },
-              {
-                name: 'Forecast',
-                data: [null, null, null, null, 52, 65, 72, 58],
-              },
-            ],
-            percentChange: 7.3,
-          },
-          costs: {
-            totalCost: 15300, // PKR
-            costBySource: {
-              'Solar Energy': 0, // Free after installation
-              '(WAPDA) - Electricity': 11424, // PKR
-              Generator: 3876, // PKR
-            },
-            costPerKWh: {
-              '(WAPDA) - Electricity': 31.2, // PKR per kWh
-              Generator: 42.6, // PKR per kWh (including fuel)
-            },
-          },
-        },
-        month: {
-          totalConsumption: {
-            value: 18765,
-            percentChange: 3.8,
-            chartData: [
-              565, 688, 725, 662, 598, 634, 719, 742, 677, 653, 621, 643, 702, 732, 765, 722, 689,
-              655, 672, 688, 712, 735, 678, 645, 590, 634, 678, 723, 745, 698,
-            ],
-          },
-          currentUsage: {
-            value: 698,
-            percentChange: 1.2,
-            chartData: [
-              565, 588, 625, 662, 698, 734, 719, 702, 677, 653, 621, 643, 662, 682, 695, 722, 709,
-              675, 642, 618, 642, 675, 698, 725, 690, 674, 658, 673, 698, 713,
-            ],
-          },
-          energyBySource: [
-            { label: 'Solar Energy', value: 26 },
-            { label: '(WAPDA) - Electricity', value: 45 },
-            { label: 'Generator', value: 29 },
-          ],
-          changeInUsage: {
-            categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
-            data: [
-              { name: 'Consumption', data: [4980, 5240, 4860, 3685] },
-              { name: 'Generation', data: [1325, 1450, 1375, 1280] },
-            ],
-          },
-          usageEstimate: {
-            categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Next Week'],
-            series: [
-              {
-                name: 'Actual',
-                data: [4980, 5240, 4860, 3685, null],
-              },
-              {
-                name: 'Forecast',
-                data: [null, null, null, null, 4950],
-              },
-            ],
-            percentChange: 5.2,
-          },
-          costs: {
-            totalCost: 375300, // PKR
-            costBySource: {
-              'Solar Energy': 0, // Free after installation
-              '(WAPDA) - Electricity': 263768, // PKR
-              Generator: 111532, // PKR
-            },
-            costPerKWh: {
-              '(WAPDA) - Electricity': 31.2, // PKR per kWh
-              Generator: 42.6, // PKR per kWh (including fuel)
-            },
-          },
-        },
-        year: {
-          totalConsumption: {
-            value: 217850,
-            percentChange: 12.4,
-            chartData: [
-              18765, 17980, 19250, 18450, 17860, 18970, 19840, 18650, 17450, 16980, 17650, 16005,
-            ],
-          },
-          currentUsage: {
-            value: 16005,
-            percentChange: -5.8,
-            chartData: [
-              18765, 17980, 19250, 18450, 17860, 18970, 19840, 18650, 17450, 16980, 17650, 16005,
-            ],
-          },
-          energyBySource: [
-            { label: 'Solar Energy', value: 31 },
-            { label: '(WAPDA) - Electricity', value: 42 },
-            { label: 'Generator', value: 27 },
-          ],
-          changeInUsage: {
-            categories: [
-              'Jan',
-              'Feb',
-              'Mar',
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-              'Nov',
-              'Dec',
-            ],
-            data: [
-              {
-                name: 'Consumption',
-                data: [
-                  18765, 17980, 19250, 18450, 17860, 18970, 19840, 18650, 17450, 16980, 17650,
-                  16005,
-                ],
-              },
-              {
-                name: 'Generation',
-                data: [5630, 5394, 5968, 5904, 6072, 6261, 6341, 6153, 5759, 5264, 5295, 4802],
-              },
-            ],
-          },
-          usageEstimate: {
-            categories: [
-              'Jan',
-              'Feb',
-              'Mar',
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-              'Nov',
-              'Dec',
-            ],
-            series: [
-              {
-                name: 'Last Year',
-                data: [
-                  16870, 16230, 17340, 16580, 16070, 17060, 17850, 16780, 15700, 15280, 15890,
-                  14400,
-                ],
-              },
-              {
-                name: 'This Year',
-                data: [
-                  18765, 17980, 19250, 18450, 17860, 18970, 19840, 18650, 17450, 16980, 17650,
-                  16005,
-                ],
-              },
-            ],
-            percentChange: 12.4,
-          },
-          costs: {
-            totalCost: 4357000, // PKR
-            costBySource: {
-              'Solar Energy': 0, // Free after installation
-              '(WAPDA) - Electricity': 2857350, // PKR
-              Generator: 1499650, // PKR
-            },
-            averageCostPerKWh: {
-              '(WAPDA) - Electricity': 31.2, // PKR per kWh
-              Generator: 42.6, // PKR per kWh (including fuel)
-            },
-          },
-        },
-      },
-      {
-        id: 'client-pb-002',
-        name: 'Faisalabad Textile Mills',
-        location: 'Faisalabad, Punjab',
-        day: {
-          totalConsumption: {
-            value: 842,
-            percentChange: 4.2,
-            chartData: [34, 68, 75, 92, 102, 114, 107, 95, 83, 72],
-          },
-          currentUsage: {
-            value: 72,
-            percentChange: -2.1,
-            chartData: [62, 79, 88, 93, 89, 84, 79, 76, 74, 72],
-          },
-          energyBySource: [
-            { label: 'Solar Energy', value: 18 },
-            { label: '(WAPDA) - Electricity', value: 52 },
-            { label: 'Generator', value: 30 },
-          ],
-          changeInUsage: {
-            categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
-            data: [
-              { name: 'Consumption', data: [34, 68, 95, 102, 114, 107, 95, 72] },
-              { name: 'Generation', data: [6, 12, 17, 16, 19, 17, 13, 7] },
-            ],
-          },
-          usageEstimate: {
-            categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
-            series: [
-              {
-                name: 'Actual',
-                data: [34, 68, 95, 102, 114, 107, 95, 72],
-              },
-              {
-                name: 'Forecast',
-                data: [null, null, null, null, 118, 112, 98, 75],
-              },
-            ],
-            percentChange: 5.8,
-          },
-          costs: {
-            totalCost: 17682, // PKR
-            costBySource: {
-              'Solar Energy': 0,
-              '(WAPDA) - Electricity': 13676, // PKR
-              Generator: 4006, // PKR
-            },
-            costPerKWh: {
-              '(WAPDA) - Electricity': 31.2, // PKR per kWh
-              Generator: 42.6, // PKR per kWh (including fuel)
-            },
-          },
-        },
-        month: {
-          totalConsumption: {
-            value: 24650,
-            percentChange: 6.8,
-            chartData: [
-              712, 765, 828, 875, 842, 798, 765, 812, 845, 872, 835, 805, 778, 802, 834, 867, 842,
-              815, 787, 762, 787, 812, 845, 878, 842, 815, 787, 798, 825, 842,
-            ],
-          },
-          currentUsage: {
-            value: 842,
-            percentChange: 2.2,
-            chartData: [
-              765, 798, 825, 842, 825, 798, 765, 742, 765, 798, 825, 842, 825, 798, 765, 742, 765,
-              798, 825, 842, 825, 798, 765, 742, 765, 798, 825, 842, 825, 798,
-            ],
-          },
-          energyBySource: [
-            { label: 'Solar Energy', value: 20 },
-            { label: '(WAPDA) - Electricity', value: 55 },
-            { label: 'Generator', value: 25 },
-          ],
-          changeInUsage: {
-            categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
-            data: [
-              { name: 'Consumption', data: [5970, 6120, 6340, 6220] },
-              { name: 'Generation', data: [1075, 1200, 1375, 1180] },
-            ],
-          },
-          usageEstimate: {
-            categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Next Week'],
-            series: [
-              {
-                name: 'Actual',
-                data: [5970, 6120, 6340, 6220, null],
-              },
-              {
-                name: 'Forecast',
-                data: [null, null, null, null, 6380],
-              },
-            ],
-            percentChange: 7.2,
-          },
-          costs: {
-            totalCost: 493000, // PKR
-            costBySource: {
-              'Solar Energy': 0,
-              '(WAPDA) - Electricity': 423225, // PKR
-              Generator: 69775, // PKR
-            },
-            costPerKWh: {
-              '(WAPDA) - Electricity': 31.2, // PKR per kWh
-              Generator: 42.6, // PKR per kWh (including fuel)
-            },
-          },
-        },
-        year: {
-          totalConsumption: {
-            value: 286500,
-            percentChange: 15.2,
-            chartData: [
-              22500, 21800, 23450, 24650, 25800, 27200, 26750, 25400, 24300, 23500, 21950, 19200,
-            ],
-          },
-          currentUsage: {
-            value: 19200,
-            percentChange: -12.5,
-            chartData: [
-              22500, 21800, 23450, 24650, 25800, 27200, 26750, 25400, 24300, 23500, 21950, 19200,
-            ],
-          },
-          energyBySource: [
-            { label: 'Solar Energy', value: 22 },
-            { label: '(WAPDA) - Electricity', value: 51 },
-            { label: 'Generator', value: 27 },
-          ],
-          changeInUsage: {
-            categories: [
-              'Jan',
-              'Feb',
-              'Mar',
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-              'Nov',
-              'Dec',
-            ],
-            data: [
-              {
-                name: 'Consumption',
-                data: [
-                  22500, 21800, 23450, 24650, 25800, 27200, 26750, 25400, 24300, 23500, 21950,
-                  19200,
-                ],
-              },
-              {
-                name: 'Generation',
-                data: [4950, 4794, 5159, 5423, 5676, 5984, 5885, 5588, 5346, 5170, 4829, 4224],
-              },
-            ],
-          },
-          usageEstimate: {
-            categories: [
-              'Jan',
-              'Feb',
-              'Mar',
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-              'Nov',
-              'Dec',
-            ],
-            series: [
-              {
-                name: 'Last Year',
-                data: [
-                  19550, 18966, 20402, 21446, 22446, 23664, 23273, 22098, 21141, 20445, 19097,
-                  16704,
-                ],
-              },
-              {
-                name: 'This Year',
-                data: [
-                  22500, 21800, 23450, 24650, 25800, 27200, 26750, 25400, 24300, 23500, 21950,
-                  19200,
-                ],
-              },
-            ],
-            percentChange: 15.2,
-          },
-          costs: {
-            totalCost: 5730000, // PKR
-            costBySource: {
-              'Solar Energy': 0,
-              '(WAPDA) - Electricity': 4560240, // PKR
-              Generator: 1169760, // PKR
-            },
-            averageCostPerKWh: {
-              '(WAPDA) - Electricity': 31.2, // PKR per kWh
-              Generator: 42.6, // PKR per kWh (including fuel)
-            },
-          },
-        },
-      },
-    ],
-    // Provincial aggregated data
-    aggregated: {
-      day: {
-        totalConsumption: {
-          value: 765,
-          percentChange: 2.6,
-          chartData: [22, 58, 65, 72, 82, 94, 87, 72, 67, 43], // hourly data points
-        },
-        currentUsage: {
-          value: 83,
-          percentChange: -0.1,
-          chartData: [56, 67, 72, 62, 58, 54, 49, 54, 67, 68], // hourly data points
-        },
-        energyBySource: [
-          { label: 'Solar Energy', value: 22 },
-          { label: '(WAPDA) - Electricity', value: 48 },
-          { label: 'Generator', value: 30 },
-        ],
-        changeInUsage: {
-          categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
-          data: [
-            { name: 'Consumption', data: [10, 41, 65, 51, 49, 62, 69, 51] },
-            { name: 'Generation', data: [5, 34, 23, 56, 47, 38, 29, 17] },
-          ],
-        },
-        usageEstimate: {
-          categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
-          series: [
-            {
-              name: 'Actual',
-              data: [22, 41, 65, 51, 49, 62, 69, 51],
-            },
-            {
-              name: 'Forecast',
-              data: [null, null, null, null, 52, 65, 72, 58],
-            },
-          ],
-          percentChange: 7.3,
-        },
-        costs: {
-          totalCost: 15300, // PKR
-          costBySource: {
-            'Solar Energy': 0, // Free after installation
-            '(WAPDA) - Electricity': 11424, // PKR
-            Generator: 3876, // PKR
-          },
-          costPerKWh: {
-            '(WAPDA) - Electricity': 31.2, // PKR per kWh
-            Generator: 42.6, // PKR per kWh (including fuel)
-          },
-        },
-      },
-      month: {
-        totalConsumption: {
-          value: 18765,
-          percentChange: 3.8,
-          chartData: [
-            565, 688, 725, 662, 598, 634, 719, 742, 677, 653, 621, 643, 702, 732, 765, 722, 689,
-            655, 672, 688, 712, 735, 678, 645, 590, 634, 678, 723, 745, 698,
-          ],
-        },
-        currentUsage: {
-          value: 698,
-          percentChange: 1.2,
-          chartData: [
-            565, 588, 625, 662, 698, 734, 719, 702, 677, 653, 621, 643, 662, 682, 695, 722, 709,
-            675, 642, 618, 642, 675, 698, 725, 690, 674, 658, 673, 698, 713,
-          ],
-        },
-        energyBySource: [
-          { label: 'Solar Energy', value: 26 },
-          { label: '(WAPDA) - Electricity', value: 45 },
-          { label: 'Generator', value: 29 },
-        ],
-        changeInUsage: {
-          categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
-          data: [
-            { name: 'Consumption', data: [4980, 5240, 4860, 3685] },
-            { name: 'Generation', data: [1325, 1450, 1375, 1280] },
-          ],
-        },
-        usageEstimate: {
-          categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Next Week'],
-          series: [
-            {
-              name: 'Actual',
-              data: [4980, 5240, 4860, 3685, null],
-            },
-            {
-              name: 'Forecast',
-              data: [null, null, null, null, 4950],
-            },
-          ],
-          percentChange: 5.2,
-        },
-        costs: {
-          totalCost: 375300, // PKR
-          costBySource: {
-            'Solar Energy': 0, // Free after installation
-            '(WAPDA) - Electricity': 263768, // PKR
-            Generator: 111532, // PKR
-          },
-          costPerKWh: {
-            '(WAPDA) - Electricity': 31.2, // PKR per kWh
-            Generator: 42.6, // PKR per kWh (including fuel)
-          },
-        },
-      },
-      year: {
-        totalConsumption: {
-          value: 217850,
-          percentChange: 12.4,
-          chartData: [
-            18765, 17980, 19250, 18450, 17860, 18970, 19840, 18650, 17450, 16980, 17650, 16005,
-          ],
-        },
-        currentUsage: {
-          value: 16005,
-          percentChange: -5.8,
-          chartData: [
-            18765, 17980, 19250, 18450, 17860, 18970, 19840, 18650, 17450, 16980, 17650, 16005,
-          ],
-        },
-        energyBySource: [
-          { label: 'Solar Energy', value: 31 },
-          { label: '(WAPDA) - Electricity', value: 42 },
-          { label: 'Generator', value: 27 },
-        ],
-        changeInUsage: {
-          categories: [
-            'Jan',
-            'Feb',
-            'Mar',
-            'Apr',
-            'May',
-            'Jun',
-            'Jul',
-            'Aug',
-            'Sep',
-            'Oct',
-            'Nov',
-            'Dec',
-          ],
-          data: [
-            {
-              name: 'Consumption',
-              data: [
-                18765, 17980, 19250, 18450, 17860, 18970, 19840, 18650, 17450, 16980, 17650, 16005,
-              ],
-            },
-            {
-              name: 'Generation',
-              data: [5630, 5394, 5968, 5904, 6072, 6261, 6341, 6153, 5759, 5264, 5295, 4802],
-            },
-          ],
-        },
-        usageEstimate: {
-          categories: [
-            'Jan',
-            'Feb',
-            'Mar',
-            'Apr',
-            'May',
-            'Jun',
-            'Jul',
-            'Aug',
-            'Sep',
-            'Oct',
-            'Nov',
-            'Dec',
-          ],
-          series: [
-            {
-              name: 'Last Year',
-              data: [
-                16870, 16230, 17340, 16580, 16070, 17060, 17850, 16780, 15700, 15280, 15890, 14400,
-              ],
-            },
-            {
-              name: 'This Year',
-              data: [
-                18765, 17980, 19250, 18450, 17860, 18970, 19840, 18650, 17450, 16980, 17650, 16005,
-              ],
-            },
-          ],
-          percentChange: 12.4,
-        },
-        costs: {
-          totalCost: 4357000, // PKR
-          costBySource: {
-            'Solar Energy': 0, // Free after installation
-            '(WAPDA) - Electricity': 2857350, // PKR
-            Generator: 1499650, // PKR
-          },
-          averageCostPerKWh: {
-            '(WAPDA) - Electricity': 31.2, // PKR per kWh
-            Generator: 42.6, // PKR per kWh (including fuel)
-          },
-        },
-      },
-    },
-  },
-  balochistan: {
-    clients: [
-      {
-        id: 'client-sd-001',
-        name: 'Karachi Power Plant',
-        location: 'Karachi, Sindh',
-        day: {
-          totalConsumption: {
-            value: 982,
-            percentChange: 3.1,
-            chartData: [45, 62, 78, 85, 97, 105, 98, 92, 84, 76],
-          },
-          currentUsage: {
-            value: 91,
-            percentChange: -0.5,
-            chartData: [67, 73, 78, 81, 76, 70, 65, 63, 69, 72],
-          },
-          energyBySource: [
-            { label: 'Solar Energy', value: 28 },
-            { label: '(WAPDA) - Electricity', value: 47 },
-            { label: 'Generator', value: 25 },
-          ],
-          changeInUsage: {
-            categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
-            data: [
-              { name: 'Consumption', data: [32, 58, 79, 86, 91, 95, 88, 72] },
-              { name: 'Generation', data: [8, 14, 19, 23, 24, 22, 18, 10] },
-            ],
-          },
-          usageEstimate: {
-            categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
-            series: [
-              {
-                name: 'Actual',
-                data: [32, 58, 79, 86, 91, 95, 88, 72],
-              },
-              {
-                name: 'Forecast',
-                data: [null, null, null, null, 96, 100, 91, 75],
-              },
-            ],
-            percentChange: 4.5,
-          },
-          costs: {
-            totalCost: 19820,
-            costBySource: {
-              'Solar Energy': 0,
-              '(WAPDA) - Electricity': 14700,
-              Generator: 5120,
-            },
-            costPerKWh: {
-              '(WAPDA) - Electricity': 31.2,
-              Generator: 42.6,
-            },
-          },
-        },
-        month: {
-          totalConsumption: {
-            value: 29450,
-            percentChange: 5.4,
-            chartData: [
-              812, 845, 875, 902, 967, 1010, 982, 934, 915, 878, 845, 812, 799, 823, 857, 894, 872,
-              847, 818, 795, 821, 855, 890, 912, 873, 845, 813, 829, 864, 898,
-            ],
-          },
-          currentUsage: {
-            value: 898,
-            percentChange: 2.3,
-            chartData: [
-              845, 870, 893, 918, 941, 976, 958, 933, 912, 898, 881, 869, 857, 842, 828, 811, 795,
-              779, 765, 754, 742, 730, 715, 704, 693, 682, 670, 659, 648, 637,
-            ],
-          },
-          energyBySource: [
-            { label: 'Solar Energy', value: 25 },
-            { label: '(WAPDA) - Electricity', value: 50 },
-            { label: 'Generator', value: 25 },
-          ],
-          changeInUsage: {
-            categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
-            data: [
-              { name: 'Consumption', data: [6975, 7350, 7680, 7445] },
-              { name: 'Generation', data: [1225, 1375, 1495, 1325] },
-            ],
-          },
-          usageEstimate: {
-            categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Next Week'],
-            series: [
-              {
-                name: 'Actual',
-                data: [6975, 7350, 7680, 7445, null],
-              },
-              {
-                name: 'Forecast',
-                data: [null, null, null, null, 7630],
-              },
-            ],
-            percentChange: 6.1,
-          },
-          costs: {
-            totalCost: 582900,
-            costBySource: {
-              'Solar Energy': 0,
-              '(WAPDA) - Electricity': 456000,
-              Generator: 126900,
-            },
-            costPerKWh: {
-              '(WAPDA) - Electricity': 31.2,
-              Generator: 42.6,
-            },
-          },
-        },
-        year: {
-          totalConsumption: {
-            value: 329000,
-            percentChange: 13.6,
-            chartData: [
-              25000, 26100, 27300, 28500, 29800, 31000, 30350, 29100, 27800, 26900, 25650, 23000,
-            ],
-          },
-          currentUsage: {
-            value: 23000,
-            percentChange: -11.5,
-            chartData: [
-              25000, 26100, 27300, 28500, 29800, 31000, 30350, 29100, 27800, 26900, 25650, 23000,
-            ],
-          },
-          energyBySource: [
-            { label: 'Solar Energy', value: 27 },
-            { label: '(WAPDA) - Electricity', value: 48 },
-            { label: 'Generator', value: 25 },
-          ],
-          changeInUsage: {
-            categories: [
-              'Jan',
-              'Feb',
-              'Mar',
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-              'Nov',
-              'Dec',
-            ],
-            data: [
-              {
-                name: 'Consumption',
-                data: [
-                  25000, 26100, 27300, 28500, 29800, 31000, 30350, 29100, 27800, 26900, 25650,
-                  23000,
-                ],
-              },
-              {
-                name: 'Generation',
-                data: [6750, 7000, 7280, 7500, 7820, 8050, 7950, 7620, 7280, 7010, 6680, 5980],
-              },
-            ],
-          },
-          usageEstimate: {
-            categories: [
-              'Jan',
-              'Feb',
-              'Mar',
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-              'Nov',
-              'Dec',
-            ],
-            series: [
-              {
-                name: 'Last Year',
-                data: [
-                  22200, 23280, 24320, 25400, 26520, 27640, 27080, 26080, 24800, 23940, 22800,
-                  20400,
-                ],
-              },
-              {
-                name: 'This Year',
-                data: [
-                  25000, 26100, 27300, 28500, 29800, 31000, 30350, 29100, 27800, 26900, 25650,
-                  23000,
-                ],
-              },
-            ],
-            percentChange: 13.6,
-          },
-          costs: {
-            totalCost: 6580000,
-            costBySource: {
-              'Solar Energy': 0,
-              '(WAPDA) - Electricity': 4987200,
-              Generator: 1592800,
-            },
-            averageCostPerKWh: {
-              '(WAPDA) - Electricity': 31.2,
-              Generator: 42.6,
-            },
-          },
-        },
-      },
-
-      {
-        id: 'client-sd-002',
-        name: 'Hyderabad Agro Industries',
-        location: 'Hyderabad, Sindh',
-        day: {
-          totalConsumption: {
-            value: 655,
-            percentChange: 2.4,
-            chartData: [30, 42, 53, 61, 67, 73, 68, 64, 58, 50],
-          },
-          currentUsage: {
-            value: 59,
-            percentChange: -1.0,
-            chartData: [49, 52, 56, 59, 60, 58, 56, 53, 51, 49],
-          },
-          energyBySource: [
-            { label: 'Solar Energy', value: 24 },
-            { label: '(WAPDA) - Electricity', value: 51 },
-            { label: 'Generator', value: 25 },
-          ],
-          changeInUsage: {
-            categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
-            data: [
-              { name: 'Consumption', data: [28, 42, 53, 61, 67, 73, 68, 50] },
-              { name: 'Generation', data: [7, 12, 15, 17, 19, 18, 14, 8] },
-            ],
-          },
-          usageEstimate: {
-            categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
-            series: [
-              {
-                name: 'Actual',
-                data: [28, 42, 53, 61, 67, 73, 68, 50],
-              },
-              {
-                name: 'Forecast',
-                data: [null, null, null, null, 69, 75, 71, 52],
+                data: [71, 52],
               },
             ],
             percentChange: 4.1,
@@ -1969,22 +1692,22 @@ const mockEnergyData: any = {
           { label: 'Generator', value: 30 },
         ],
         changeInUsage: {
-          categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
+          categories: ['Today', 'Yesterday'],
           data: [
-            { name: 'Consumption', data: [10, 41, 65, 51, 49, 62, 69, 51] },
-            { name: 'Generation', data: [5, 34, 23, 56, 47, 38, 29, 17] },
+            { name: 'Consumption', data: [10, 41] },
+            { name: 'Generation', data: [5, 34] },
           ],
         },
         usageEstimate: {
-          categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
+          categories: ['Today', 'Yesterday'],
           series: [
             {
               name: 'Actual',
-              data: [22, 41, 65, 51, 49, 62, 69, 51],
+              data: [22, 41],
             },
             {
               name: 'Forecast',
-              data: [null, null, null, null, 52, 65, 72, 58],
+              data: [null, 58],
             },
           ],
           percentChange: 7.3,
@@ -2025,22 +1748,22 @@ const mockEnergyData: any = {
           { label: 'Generator', value: 29 },
         ],
         changeInUsage: {
-          categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+          categories: ['Mar', 'Apr'],
           data: [
-            { name: 'Consumption', data: [4980, 5240, 4860, 3685] },
-            { name: 'Generation', data: [1325, 1450, 1375, 1280] },
+            { name: 'Consumption', data: [4980, 5240] },
+            { name: 'Generation', data: [1325, 1450] },
           ],
         },
         usageEstimate: {
-          categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Next Week'],
+          categories: ['Mar', 'Apr'],
           series: [
             {
               name: 'Actual',
-              data: [4980, 5240, 4860, 3685, null],
+              data: [4980, 5240],
             },
             {
               name: 'Forecast',
-              data: [null, null, null, null, 4950],
+              data: [null, 4950],
             },
           ],
           percentChange: 5.2,
@@ -2063,14 +1786,14 @@ const mockEnergyData: any = {
           value: 217850,
           percentChange: 12.4,
           chartData: [
-            18765, 17980, 19250, 18450, 17860, 18970, 19840, 18650, 17450, 16980, 17650, 16005,
+            5800, 5900, 6000, 6150, 6250, 6350, 6500, 6600, 6700, 6800, 6900, 7000,
           ],
         },
         currentUsage: {
           value: 16005,
           percentChange: -5.8,
           chartData: [
-            18765, 17980, 19250, 18450, 17860, 18970, 19840, 18650, 17450, 16980, 17650, 16005,
+            5700, 5800, 5900, 6050, 6150, 6250, 6400, 6500, 6600, 6700, 6800, 6900
           ],
         },
         energyBySource: [
@@ -2079,60 +1802,28 @@ const mockEnergyData: any = {
           { label: 'Generator', value: 27 },
         ],
         changeInUsage: {
-          categories: [
-            'Jan',
-            'Feb',
-            'Mar',
-            'Apr',
-            'May',
-            'Jun',
-            'Jul',
-            'Aug',
-            'Sep',
-            'Oct',
-            'Nov',
-            'Dec',
-          ],
+          categories: ['2024', '2025'],
           data: [
             {
               name: 'Consumption',
-              data: [
-                18765, 17980, 19250, 18450, 17860, 18970, 19840, 18650, 17450, 16980, 17650, 16005,
-              ],
+              data: [18765, 17980],
             },
             {
               name: 'Generation',
-              data: [5630, 5394, 5968, 5904, 6072, 6261, 6341, 6153, 5759, 5264, 5295, 4802],
+              data: [5630, 5394],
             },
           ],
         },
         usageEstimate: {
-          categories: [
-            'Jan',
-            'Feb',
-            'Mar',
-            'Apr',
-            'May',
-            'Jun',
-            'Jul',
-            'Aug',
-            'Sep',
-            'Oct',
-            'Nov',
-            'Dec',
-          ],
+          categories: ['2024', '2025'],
           series: [
             {
               name: 'Last Year',
-              data: [
-                16870, 16230, 17340, 16580, 16070, 17060, 17850, 16780, 15700, 15280, 15890, 14400,
-              ],
+              data: [16870, 16230],
             },
             {
               name: 'This Year',
-              data: [
-                18765, 17980, 19250, 18450, 17860, 18970, 19840, 18650, 17450, 16980, 17650, 16005,
-              ],
+              data: [18765, 17980],
             },
           ],
           percentChange: 12.4,
@@ -2175,22 +1866,22 @@ const mockEnergyData: any = {
             { label: 'Generator', value: 25 },
           ],
           changeInUsage: {
-            categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
+            categories: ['Today', 'Yesterday'],
             data: [
-              { name: 'Consumption', data: [32, 58, 79, 86, 91, 95, 88, 72] },
-              { name: 'Generation', data: [8, 14, 19, 23, 24, 22, 18, 10] },
+              { name: 'Consumption', data: [32, 58] },
+              { name: 'Generation', data: [8, 14] },
             ],
           },
           usageEstimate: {
-            categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
+            categories: ['Today', 'Yesterday'],
             series: [
               {
                 name: 'Actual',
-                data: [32, 58, 79, 86, 91, 95, 88, 72],
+                data: [32, 58],
               },
               {
                 name: 'Forecast',
-                data: [null, null, null, null, 96, 100, 91, 75],
+                data: [null, 75],
               },
             ],
             percentChange: 4.5,
@@ -2231,22 +1922,22 @@ const mockEnergyData: any = {
             { label: 'Generator', value: 25 },
           ],
           changeInUsage: {
-            categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+            categories: ['Mar', 'Apr'],
             data: [
-              { name: 'Consumption', data: [6975, 7350, 7680, 7445] },
-              { name: 'Generation', data: [1225, 1375, 1495, 1325] },
+              { name: 'Consumption', data: [6975, 7350] },
+              { name: 'Generation', data: [1225, 1375] },
             ],
           },
           usageEstimate: {
-            categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Next Week'],
+            categories: ['Mar', 'Apr'],
             series: [
               {
                 name: 'Actual',
-                data: [6975, 7350, 7680, 7445, null],
+                data: [6975, 7350],
               },
               {
                 name: 'Forecast',
-                data: [null, null, null, null, 7630],
+                data: [null, 7630],
               },
             ],
             percentChange: 6.1,
@@ -2285,63 +1976,28 @@ const mockEnergyData: any = {
             { label: 'Generator', value: 25 },
           ],
           changeInUsage: {
-            categories: [
-              'Jan',
-              'Feb',
-              'Mar',
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-              'Nov',
-              'Dec',
-            ],
+            categories: ['2024', '2025'],
             data: [
               {
                 name: 'Consumption',
-                data: [
-                  25000, 26100, 27300, 28500, 29800, 31000, 30350, 29100, 27800, 26900, 25650,
-                  23000,
-                ],
+                data: [25000, 26100, 23000],
               },
               {
                 name: 'Generation',
-                data: [6750, 7000, 7280, 7500, 7820, 8050, 7950, 7620, 7280, 7010, 6680, 5980],
+                data: [6750, 7000],
               },
             ],
           },
           usageEstimate: {
-            categories: [
-              'Jan',
-              'Feb',
-              'Mar',
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-              'Nov',
-              'Dec',
-            ],
+            categories: ['2024', '2025'],
             series: [
               {
                 name: 'Last Year',
-                data: [
-                  22200, 23280, 24320, 25400, 26520, 27640, 27080, 26080, 24800, 23940, 22800,
-                  20400,
-                ],
+                data: [22200, 23280],
               },
               {
                 name: 'This Year',
-                data: [
-                  25000, 26100, 27300, 28500, 29800, 31000, 30350, 29100, 27800, 26900, 25650,
-                  23000,
-                ],
+                data: [null, 26100],
               },
             ],
             percentChange: 13.6,
@@ -2382,22 +2038,22 @@ const mockEnergyData: any = {
             { label: 'Generator', value: 25 },
           ],
           changeInUsage: {
-            categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
+            categories: ['Today', 'Yesterday'],
             data: [
-              { name: 'Consumption', data: [28, 42, 53, 61, 67, 73, 68, 50] },
-              { name: 'Generation', data: [7, 12, 15, 17, 19, 18, 14, 8] },
+              { name: 'Consumption', data: [28, 42] },
+              { name: 'Generation', data: [7, 12] },
             ],
           },
           usageEstimate: {
-            categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
+            categories: ['Today', 'Yesterday'],
             series: [
               {
                 name: 'Actual',
-                data: [28, 42, 53, 61, 67, 73, 68, 50],
+                data: [28, 42],
               },
               {
                 name: 'Forecast',
-                data: [null, null, null, null, 69, 75, 71, 52],
+                data: [71, 52],
               },
             ],
             percentChange: 4.1,
@@ -2436,22 +2092,22 @@ const mockEnergyData: any = {
           { label: 'Generator', value: 30 },
         ],
         changeInUsage: {
-          categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
+          categories: ['Today', 'Yesterday'],
           data: [
-            { name: 'Consumption', data: [34, 68, 95, 102, 114, 107, 95, 72] },
-            { name: 'Generation', data: [6, 12, 17, 16, 19, 17, 13, 7] },
+            { name: 'Consumption', data: [34, 68] },
+            { name: 'Generation', data: [6, 12] },
           ],
         },
         usageEstimate: {
-          categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
+          categories: ['Today', 'Yesterday'],
           series: [
             {
               name: 'Actual',
-              data: [34, 68, 95, 102, 114, 107, 95, 72],
+              data: [34, 68],
             },
             {
               name: 'Forecast',
-              data: [null, null, null, null, 118, 112, 98, 75],
+              data: [98, 75],
             },
           ],
           percentChange: 5.8,
@@ -2492,22 +2148,22 @@ const mockEnergyData: any = {
           { label: 'Generator', value: 25 },
         ],
         changeInUsage: {
-          categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+          categories: ['Mar', 'Apr'],
           data: [
-            { name: 'Consumption', data: [5970, 6120, 6340, 6220] },
-            { name: 'Generation', data: [1075, 1200, 1375, 1180] },
+            { name: 'Consumption', data: [5970, 6120] },
+            { name: 'Generation', data: [1075, 1200] },
           ],
         },
         usageEstimate: {
-          categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Next Week'],
+          categories: ['Mar', 'Apr'],
           series: [
             {
               name: 'Actual',
-              data: [5970, 6120, 6340, 6220, null],
+              data: [5970, 6120],
             },
             {
               name: 'Forecast',
-              data: [null, null, null, null, 6380],
+              data: [null, 6380],
             },
           ],
           percentChange: 7.2,
@@ -2546,60 +2202,28 @@ const mockEnergyData: any = {
           { label: 'Generator', value: 27 },
         ],
         changeInUsage: {
-          categories: [
-            'Jan',
-            'Feb',
-            'Mar',
-            'Apr',
-            'May',
-            'Jun',
-            'Jul',
-            'Aug',
-            'Sep',
-            'Oct',
-            'Nov',
-            'Dec',
-          ],
+          categories: ['2024', '2025'],
           data: [
             {
               name: 'Consumption',
-              data: [
-                22500, 21800, 23450, 24650, 25800, 27200, 26750, 25400, 24300, 23500, 21950, 19200,
-              ],
+              data: [22500, 21800],
             },
             {
               name: 'Generation',
-              data: [4950, 4794, 5159, 5423, 5676, 5984, 5885, 5588, 5346, 5170, 4829, 4224],
+              data: [4950, 4794],
             },
           ],
         },
         usageEstimate: {
-          categories: [
-            'Jan',
-            'Feb',
-            'Mar',
-            'Apr',
-            'May',
-            'Jun',
-            'Jul',
-            'Aug',
-            'Sep',
-            'Oct',
-            'Nov',
-            'Dec',
-          ],
+          categories: ['2024', '2025'],
           series: [
             {
               name: 'Last Year',
-              data: [
-                19550, 18966, 20402, 21446, 22446, 23664, 23273, 22098, 21141, 20445, 19097, 16704,
-              ],
+              data: [19550, 18966],
             },
             {
               name: 'This Year',
-              data: [
-                22500, 21800, 23450, 24650, 25800, 27200, 26750, 25400, 24300, 23500, 21950, 19200,
-              ],
+              data: [22500, 21800],
             },
           ],
           percentChange: 15.2,
@@ -2642,17 +2266,17 @@ const mockEnergyData: any = {
             { label: 'Generator', value: 33 },
           ],
           changeInUsage: {
-            categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
+            categories: ['Today', 'Yesterday'],
             data: [
-              { name: 'Consumption', data: [88, 53, 23, 78, 26, 43, 84, 61] },
-              { name: 'Generation', data: [24, 5, 24, 39, 17, 16, 37, 46] },
+              { name: 'Consumption', data: [88, 53] },
+              { name: 'Generation', data: [24, 5] },
             ],
           },
           usageEstimate: {
-            categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
+            categories: ['Today', 'Yesterday'],
             series: [
-              { name: 'Actual', data: [47, 91, 50, 67, 55, 72, 41, 83] },
-              { name: 'Forecast', data: [77, 71, 15, 31, 11, 15, 57, 63] },
+              { name: 'Actual', data: [47, 91] },
+              { name: 'Forecast', data: [77, 71] },
             ],
             percentChange: -2.02,
           },
@@ -2685,17 +2309,17 @@ const mockEnergyData: any = {
             { label: 'Generator', value: 31 },
           ],
           changeInUsage: {
-            categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+            categories: ['Mar', 'Apr'],
             data: [
-              { name: 'Consumption', data: [1991, 2927, 3997, 2032] },
-              { name: 'Generation', data: [1172, 1762, 1085, 2228] },
+              { name: 'Consumption', data: [1991, 2927] },
+              { name: 'Generation', data: [1172, 1762] },
             ],
           },
           usageEstimate: {
-            categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Next Week'],
+            categories: ['Mar', 'Apr'],
             series: [
-              { name: 'Actual', data: [1345, 3064, 1102, 3272] },
-              { name: 'Forecast', data: [2098, 4132, 2630, 2482] },
+              { name: 'Actual', data: [1345, 3064] },
+              { name: 'Forecast', data: [null, 4132] },
             ],
             percentChange: 9.68,
           },
@@ -2726,63 +2350,28 @@ const mockEnergyData: any = {
             { label: 'Generator', value: 27 },
           ],
           changeInUsage: {
-            categories: [
-              'Jan',
-              'Feb',
-              'Mar',
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-              'Nov',
-              'Dec',
-            ],
+            categories: ['2024', '2025'],
             data: [
               {
                 name: 'Consumption',
-                data: [
-                  22295, 16121, 24857, 22729, 16454, 21553, 17564, 23844, 17865, 15409, 20914,
-                  22608,
-                ],
+                data: [22295, 16121],
               },
               {
                 name: 'Generation',
-                data: [9154, 9561, 9384, 9758, 8374, 7185, 6263, 6342, 7016, 7691, 8878, 9847],
+                data: [9154, 9561],
               },
             ],
           },
           usageEstimate: {
-            categories: [
-              'Jan',
-              'Feb',
-              'Mar',
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-              'Nov',
-              'Dec',
-            ],
+            categories: ['2024', '2025'],
             series: [
               {
                 name: 'Last Year',
-                data: [
-                  20187, 23863, 18275, 21325, 17580, 18686, 21844, 16134, 17136, 16642, 19649,
-                  23454,
-                ],
+                data: [20187, 23863],
               },
               {
                 name: 'This Year',
-                data: [
-                  17437, 22089, 20328, 18365, 16977, 19509, 24587, 23157, 19313, 24184, 17474,
-                  20657,
-                ],
+                data: [17437, 22089],
               },
             ],
             percentChange: 11.79,
@@ -2819,17 +2408,17 @@ const mockEnergyData: any = {
             { label: 'Generator', value: 34 },
           ],
           changeInUsage: {
-            categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
+            categories: ['Today', 'Yesterday'],
             data: [
-              { name: 'Consumption', data: [81, 11, 32, 79, 87, 71, 49, 33] },
-              { name: 'Generation', data: [22, 34, 37, 8, 29, 27, 16, 39] },
+              { name: 'Consumption', data: [81, 11] },
+              { name: 'Generation', data: [22, 34] },
             ],
           },
           usageEstimate: {
-            categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
+            categories: ['Today', 'Yesterday'],
             series: [
-              { name: 'Actual', data: [24, 76, 65, 98, 85, 84, 30, 78] },
-              { name: 'Forecast', data: [97, 95, 32, 10, 68, 33, 16, 16] },
+              { name: 'Actual', data: [24, 76] },
+              { name: 'Forecast', data: [97, 95] },
             ],
             percentChange: 3.71,
           },
@@ -2862,17 +2451,17 @@ const mockEnergyData: any = {
             { label: 'Generator', value: 27 },
           ],
           changeInUsage: {
-            categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+            categories: ['Mar', 'Apr'],
             data: [
-              { name: 'Consumption', data: [2183, 3562, 4511, 4760] },
-              { name: 'Generation', data: [2242, 1431, 631, 966] },
+              { name: 'Consumption', data: [2183, 3562] },
+              { name: 'Generation', data: [2242, 1431] },
             ],
           },
           usageEstimate: {
-            categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Next Week'],
+            categories: ['Mar', 'Apr'],
             series: [
-              { name: 'Actual', data: [2925, 2888, 3911, 2669] },
-              { name: 'Forecast', data: [1409, 4414, 1376, 2378] },
+              { name: 'Actual', data: [2925, 2888] },
+              { name: 'Forecast', data: [1409, 4414] },
             ],
             percentChange: 6.14,
           },
@@ -2903,63 +2492,28 @@ const mockEnergyData: any = {
             { label: 'Generator', value: 21 },
           ],
           changeInUsage: {
-            categories: [
-              'Jan',
-              'Feb',
-              'Mar',
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-              'Nov',
-              'Dec',
-            ],
+            categories: ['2024', '2025'],
             data: [
               {
                 name: 'Consumption',
-                data: [
-                  24971, 24680, 15502, 17644, 18711, 21084, 21056, 15272, 18089, 15676, 16114,
-                  16839,
-                ],
+                data: [24971, 24680],
               },
               {
                 name: 'Generation',
-                data: [7702, 6431, 9907, 8829, 9217, 8752, 5331, 7946, 9100, 5739, 5953, 5427],
+                data: [7702, 6431],
               },
             ],
           },
           usageEstimate: {
-            categories: [
-              'Jan',
-              'Feb',
-              'Mar',
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-              'Nov',
-              'Dec',
-            ],
+            categories: ['2024', '2025'],
             series: [
               {
                 name: 'Last Year',
-                data: [
-                  18291, 20668, 15358, 22910, 19842, 17524, 24555, 23238, 19085, 17247, 21922,
-                  19198,
-                ],
+                data: [18291, 20668],
               },
               {
                 name: 'This Year',
-                data: [
-                  24543, 19659, 18696, 18128, 23878, 22643, 22342, 17566, 21116, 19544, 16264,
-                  18771,
-                ],
+                data: [24543, 19659],
               },
             ],
             percentChange: 11.55,
@@ -2996,17 +2550,17 @@ const mockEnergyData: any = {
             { label: 'Generator', value: 28 },
           ],
           changeInUsage: {
-            categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
+            categories: ['Today', 'Yesterday'],
             data: [
-              { name: 'Consumption', data: [86, 48, 81, 65, 71, 91, 95, 44] },
-              { name: 'Generation', data: [36, 50, 42, 27, 49, 41, 11, 36] },
+              { name: 'Consumption', data: [86, 48] },
+              { name: 'Generation', data: [36, 50] },
             ],
           },
           usageEstimate: {
-            categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
+            categories: ['Today', 'Yesterday'],
             series: [
-              { name: 'Actual', data: [82, 75, 62, 32, 56, 100, 100, 74] },
-              { name: 'Forecast', data: [35, 49, 48, 97, 30, 62, 96, 41] },
+              { name: 'Actual', data: [82, 75] },
+              { name: 'Forecast', data: [35, 49] },
             ],
             percentChange: -4.25,
           },
@@ -3039,17 +2593,17 @@ const mockEnergyData: any = {
             { label: 'Generator', value: 38 },
           ],
           changeInUsage: {
-            categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+            categories: ['Mar', 'Apr'],
             data: [
-              { name: 'Consumption', data: [1683, 1418, 3658, 4225] },
-              { name: 'Generation', data: [2342, 2026, 1462, 997] },
+              { name: 'Consumption', data: [1683, 1418] },
+              { name: 'Generation', data: [2342, 2026] },
             ],
           },
           usageEstimate: {
-            categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Next Week'],
+            categories: ['Mar', 'Apr'],
             series: [
-              { name: 'Actual', data: [2723, 3676, 3011, 4633] },
-              { name: 'Forecast', data: [4702, 3296, 3398, 4836] },
+              { name: 'Actual', data: [2723, 3676] },
+              { name: 'Forecast', data: [4702, 3296] },
             ],
             percentChange: 2.2,
           },
@@ -3080,63 +2634,28 @@ const mockEnergyData: any = {
             { label: 'Generator', value: 37 },
           ],
           changeInUsage: {
-            categories: [
-              'Jan',
-              'Feb',
-              'Mar',
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-              'Nov',
-              'Dec',
-            ],
+            categories: ['2024', '2025'],
             data: [
               {
                 name: 'Consumption',
-                data: [
-                  23527, 23500, 18191, 22897, 17090, 23745, 24774, 18086, 19786, 19223, 15536,
-                  18225,
-                ],
+                data: [23527, 23500],
               },
               {
                 name: 'Generation',
-                data: [9130, 9757, 8094, 6550, 7951, 8708, 8120, 7971, 5224, 9181, 5720, 6699],
+                data: [9130, 9757],
               },
             ],
           },
           usageEstimate: {
-            categories: [
-              'Jan',
-              'Feb',
-              'Mar',
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-              'Nov',
-              'Dec',
-            ],
+            categories: ['2024', '2025'],
             series: [
               {
                 name: 'Last Year',
-                data: [
-                  16974, 18405, 16672, 22118, 16064, 23903, 15519, 16557, 17922, 15282, 22843,
-                  22026,
-                ],
+                data: [16974, 18405],
               },
               {
                 name: 'This Year',
-                data: [
-                  15416, 22866, 21377, 24419, 15645, 18502, 19341, 22271, 16173, 15838, 21116,
-                  15483,
-                ],
+                data: [15416, 22866],
               },
             ],
             percentChange: 9.07,
@@ -3171,22 +2690,22 @@ const mockEnergyData: any = {
           { label: 'Generator', value: 30 },
         ],
         changeInUsage: {
-          categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
+          categories: ['Today', 'Yesterday'],
           data: [
-            { name: 'Consumption', data: [34, 68, 95, 102, 114, 107, 95, 72] },
-            { name: 'Generation', data: [6, 12, 17, 16, 19, 17, 13, 7] },
+            { name: 'Consumption', data: [34, 68] },
+            { name: 'Generation', data: [6, 12] },
           ],
         },
         usageEstimate: {
-          categories: ['8AM', '10AM', '12PM', '2PM', '4PM', '6PM', '8PM', '10PM'],
+          categories: ['Today', 'Yesterday'],
           series: [
             {
               name: 'Actual',
-              data: [34, 68, 95, 102, 114, 107, 95, 72],
+              data: [34, 68],
             },
             {
               name: 'Forecast',
-              data: [null, null, null, null, 118, 112, 98, 75],
+              data: [118, 112],
             },
           ],
           percentChange: 5.8,
@@ -3227,22 +2746,22 @@ const mockEnergyData: any = {
           { label: 'Generator', value: 25 },
         ],
         changeInUsage: {
-          categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+          categories: ['Mar', 'Apr'],
           data: [
-            { name: 'Consumption', data: [5970, 6120, 6340, 6220] },
-            { name: 'Generation', data: [1075, 1200, 1375, 1180] },
+            { name: 'Consumption', data: [5970, 6120] },
+            { name: 'Generation', data: [1075, 1200] },
           ],
         },
         usageEstimate: {
-          categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Next Week'],
+          categories: ['Mar', 'Apr'],
           series: [
             {
               name: 'Actual',
-              data: [5970, 6120, 6340, 6220, null],
+              data: [5970, 6120],
             },
             {
               name: 'Forecast',
-              data: [null, null, null, null, 6380],
+              data: [6380, 6120],
             },
           ],
           percentChange: 7.2,
@@ -3281,60 +2800,28 @@ const mockEnergyData: any = {
           { label: 'Generator', value: 27 },
         ],
         changeInUsage: {
-          categories: [
-            'Jan',
-            'Feb',
-            'Mar',
-            'Apr',
-            'May',
-            'Jun',
-            'Jul',
-            'Aug',
-            'Sep',
-            'Oct',
-            'Nov',
-            'Dec',
-          ],
+          categories: ['2024', '2025'],
           data: [
             {
               name: 'Consumption',
-              data: [
-                22500, 21800, 23450, 24650, 25800, 27200, 26750, 25400, 24300, 23500, 21950, 19200,
-              ],
+              data: [22500, 21800],
             },
             {
               name: 'Generation',
-              data: [4950, 4794, 5159, 5423, 5676, 5984, 5885, 5588, 5346, 5170, 4829, 4224],
+              data: [4950, 4794],
             },
           ],
         },
         usageEstimate: {
-          categories: [
-            'Jan',
-            'Feb',
-            'Mar',
-            'Apr',
-            'May',
-            'Jun',
-            'Jul',
-            'Aug',
-            'Sep',
-            'Oct',
-            'Nov',
-            'Dec',
-          ],
+          categories: ['2024', '2025'],
           series: [
             {
               name: 'Last Year',
-              data: [
-                19550, 18966, 20402, 21446, 22446, 23664, 23273, 22098, 21141, 20445, 19097, 16704,
-              ],
+              data: [19550, 18966],
             },
             {
               name: 'This Year',
-              data: [
-                22500, 21800, 23450, 24650, 25800, 27200, 26750, 25400, 24300, 23500, 21950, 19200,
-              ],
+              data: [22500, 21800],
             },
           ],
           percentChange: 15.2,
@@ -3537,10 +3024,13 @@ export default function OverviewAppView() {
           </Grid>
         </Grid>
 
-        <Grid xs={12} md={3} sx={{ background: 'black', color: theme.palette.text.primary, p: 2 }}>
-          <Typography variant="subtitle1" sx={{ mb: 2 }}>
+        <Grid xs={12} md={3} sx={{ background: 'black', p: 2 }}>
+          {/* Select Client Label */}
+          <Typography variant="subtitle1" sx={{ mb: 2, color: 'white' }}>
             Select Client
           </Typography>
+
+          {/* Dropdown Select */}
           <select
             value={currentClient}
             onChange={handleClientChange}
@@ -3549,8 +3039,8 @@ export default function OverviewAppView() {
               padding: '10px',
               borderRadius: '8px',
               border: `1px solid ${theme.palette.divider}`,
-              backgroundColor: theme.palette.background.paper,
-              color: theme.palette.text.primary,
+              backgroundColor: theme.palette.background.paper, // white dropdown background
+              color: 'black', // dropdown text stays black
             }}
           >
             {getClients().map((client) => (
@@ -3560,15 +3050,16 @@ export default function OverviewAppView() {
             ))}
           </select>
 
+          {/* Client Info Section (conditionally rendered) */}
           {currentClient !== 'aggregated' && currentTabState === 'punjab' && (
             <Stack spacing={1} sx={{ mt: 2 }}>
-              <Typography variant="body2" sx={{ fontWeight: 'bold' }}>
+              <Typography variant="body2" sx={{ fontWeight: 'bold', color: 'white' }}>
                 Client Information
               </Typography>
               {mockEnergyData.punjab.clients
                 .filter((client: any) => client.id === currentClient)
                 .map((client: any) => (
-                  <Typography key={client.id} variant="body2">
+                  <Typography key={client.id} variant="body2" sx={{ color: 'white' }}>
                     Location: {client.location}
                   </Typography>
                 ))}
@@ -3589,7 +3080,7 @@ export default function OverviewAppView() {
 
         <Grid xs={12} md={4}>
           <EcommerceWidgetSummary
-            title="Current Usage"
+            title="Current Usage (kWh)"
             percent={dashboardData.currentUsage.percentChange}
             total={dashboardData.currentUsage.value}
             chart={{
@@ -3675,11 +3166,11 @@ export default function OverviewAppView() {
                   year: 'Forecast',
                   data: [
                     {
-                      name: currentTab === 'year' ? 'Last Year' : 'Actual',
+                      name: currentTab === 'year' ? 'Last Year' : 'Till now',
                       data: dashboardData?.usageEstimate?.series[0]?.data,
                     },
                     {
-                      name: currentTab === 'year' ? 'This Year' : 'Forecast',
+                      name: currentTab === 'year' ? 'This Year' : 'Predicted',
                       data: dashboardData?.usageEstimate?.series[1]?.data,
                     },
                   ],

@@ -39,6 +39,15 @@ export default function useChart(options?: ApexOptions) {
       theme.palette.info.darker,
     ],
 
+    yaxis: {
+      labels: {
+        formatter: function(value) {
+          return value + ' kWh';
+        }
+      }
+    },
+  
+
     // Chart
     chart: {
       toolbar: { show: false },

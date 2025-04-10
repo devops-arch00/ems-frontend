@@ -47,8 +47,8 @@ export default function BookingCheckInWidgets({ chart, ...other }: Props) {
       type: 'gradient',
       gradient: {
         colorStops: [
-          { offset: 0, color: colors[0][0] },
-          { offset: 100, color: colors[0][1] },
+          { offset: 0, color: colors[0][0], opacity: 0.5 },
+          { offset: 100, color: colors[0][1], opacity: 0.5 },
         ],
       },
     },
@@ -88,8 +88,8 @@ export default function BookingCheckInWidgets({ chart, ...other }: Props) {
       type: 'gradient',
       gradient: {
         colorStops: [
-          { offset: 0, color: colors[1][0] },
-          { offset: 100, color: colors[1][1] },
+          { offset: 0, color: colors[1][0], opacity: 0.5 }, // Add opacity
+          { offset: 100, color: colors[1][1], opacity: 0.5 }, // Add opacity
         ],
       },
     },
