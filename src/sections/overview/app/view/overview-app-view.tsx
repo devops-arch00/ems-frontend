@@ -8,7 +8,7 @@ import { useSettingsContext } from 'src/components/settings';
 // assets
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import { alpha, Tab, Tabs } from '@mui/material';
+import { alpha, Box, Tab, Tabs } from '@mui/material';
 import { useCallback, useState, useEffect } from 'react';
 import { _bankingRecentTransitions, _ecommerceLatestProducts } from 'src/_mock';
 import EcommerceWidgetSummary from '../../e-commerce/ecommerce-widget-summary';
@@ -1051,14 +1051,14 @@ const mockEnergyData: any = {
             value: 217850,
             percentChange: 12.4,
             chartData: [
-              12200, 12600, 13000, 13400, 13800, 14100, 14400, 14800, 15100, 15350, 15600, 15800
+              12200, 12600, 13000, 13400, 13800, 14100, 14400, 14800, 15100, 15350, 15600, 15800,
             ],
           },
           currentUsage: {
             value: 16005,
             percentChange: -5.8,
             chartData: [
-              12000, 12400, 12800, 13200, 13600, 13900, 14200, 14550, 14900, 15150, 15400, 15600
+              12000, 12400, 12800, 13200, 13600, 13900, 14200, 14550, 14900, 15150, 15400, 15600,
             ],
           },
           energyBySource: [
@@ -1510,16 +1510,16 @@ const mockEnergyData: any = {
             value: 29450,
             percentChange: 5.4,
             chartData: [
-              450, 480, 500, 530, 550, 570, 590, 610, 600, 580, 560, 545, 530, 510,
-               500, 490, 480, 470, 460, 455, 450, 440, 430, 425, 420, 410, 400, 395, 390, 385
+              450, 480, 500, 530, 550, 570, 590, 610, 600, 580, 560, 545, 530, 510, 500, 490, 480,
+              470, 460, 455, 450, 440, 430, 425, 420, 410, 400, 395, 390, 385,
             ],
           },
           currentUsage: {
             value: 898,
             percentChange: 2.3,
             chartData: [
-              430, 460, 480, 510, 530, 550, 570, 590, 580, 560, 545, 530, 515, 500, 490,
-               475, 465, 455, 445, 440, 430, 420, 410, 405, 400, 390, 385, 380, 375, 370
+              430, 460, 480, 510, 530, 550, 570, 590, 580, 560, 545, 530, 515, 500, 490, 475, 465,
+              455, 445, 440, 430, 420, 410, 405, 400, 390, 385, 380, 375, 370,
             ],
           },
           energyBySource: [
@@ -1565,16 +1565,12 @@ const mockEnergyData: any = {
           totalConsumption: {
             value: 329000,
             percentChange: 13.6,
-            chartData: [
-              5800, 5900, 6000, 6150, 6250, 6350, 6500, 6600, 6700, 6800, 6900, 7000
-            ],
+            chartData: [5800, 5900, 6000, 6150, 6250, 6350, 6500, 6600, 6700, 6800, 6900, 7000],
           },
           currentUsage: {
             value: 23000,
             percentChange: -11.5,
-            chartData: [
-              5700, 5800, 5900, 6050, 6150, 6250, 6400, 6500, 6600, 6700, 6800, 6900
-            ],
+            chartData: [5700, 5800, 5900, 6050, 6150, 6250, 6400, 6500, 6600, 6700, 6800, 6900],
           },
           energyBySource: [
             { label: 'Solar Energy', value: 27 },
@@ -1785,16 +1781,12 @@ const mockEnergyData: any = {
         totalConsumption: {
           value: 217850,
           percentChange: 12.4,
-          chartData: [
-            5800, 5900, 6000, 6150, 6250, 6350, 6500, 6600, 6700, 6800, 6900, 7000,
-          ],
+          chartData: [5800, 5900, 6000, 6150, 6250, 6350, 6500, 6600, 6700, 6800, 6900, 7000],
         },
         currentUsage: {
           value: 16005,
           percentChange: -5.8,
-          chartData: [
-            5700, 5800, 5900, 6050, 6150, 6250, 6400, 6500, 6600, 6700, 6800, 6900
-          ],
+          chartData: [5700, 5800, 5900, 6050, 6150, 6250, 6400, 6500, 6600, 6700, 6800, 6900],
         },
         energyBySource: [
           { label: 'Solar Energy', value: 31 },
@@ -2926,7 +2918,7 @@ export default function OverviewAppView() {
   return (
     <Container maxWidth={settings.themeStretch ? false : 'xl'}>
       <Grid container spacing={3}>
-        <Grid xs={12} md={9} sx={{ background: 'black', color: 'white', p: 2 }}>
+        <Grid xs={12} md={9} sx={{ background: 'white', color: 'black', p: 2 }}>
           <Typography variant="h5" component="div" sx={{ mb: 2 }}>
             Dashboard
           </Typography>
@@ -3001,11 +2993,11 @@ export default function OverviewAppView() {
                 },
               }}
             >
-              {stateOptions.map((tab) => (
+              {/* {stateOptions.map((tab) => (
                 <Tab
-                  key={tab.value}
-                  value={tab.value}
-                  label={tab.label}
+                  // key={tab.value}
+                  // value={tab.value}
+                  // label={tab.label}
                   sx={{
                     backgroundColor:
                       currentTabState === tab.value ? theme.palette.primary.main : 'transparent',
@@ -3019,33 +3011,46 @@ export default function OverviewAppView() {
                     },
                   }}
                 />
-              ))}
+              ))} */}
             </Tabs>
           </Grid>
         </Grid>
 
-        <Grid xs={12} md={3} sx={{ background: 'black', p: 2 }}>
+        <Grid xs={12} md={3} sx={{ background: 'white', p: 2 }}>
           {/* Select Client Label */}
-          <Typography variant="subtitle1" sx={{ mb: 2, color: 'white' }}>
+          <Typography variant="subtitle1" sx={{ mb: 2, color: 'black' }}>
             Select Client
           </Typography>
 
-          {/* Dropdown Select */}
+          {/* Dropdown */}
           <select
-            value={currentClient}
-            onChange={handleClientChange}
+            value={currentTabState === 'national' ? 'aggregated' : currentTabState}
+            onChange={(e) => {
+              const selected = e.target.value;
+              if (selected === 'aggregated') {
+                setCurrentTabState('punjab'); // default to Punjab if needed
+                setCurrentClient('aggregated');
+              } else {
+                setCurrentTabState(selected); // set selected province
+                setCurrentClient('aggregated'); // always reset to aggregated
+              }
+            }}
             style={{
               width: '100%',
               padding: '10px',
               borderRadius: '8px',
               border: `1px solid ${theme.palette.divider}`,
-              backgroundColor: theme.palette.background.paper, // white dropdown background
-              color: 'black', // dropdown text stays black
+              backgroundColor: theme.palette.background.paper,
+              color: 'black',
             }}
           >
-            {getClients().map((client) => (
-              <option key={client.id} value={client.id}>
-                {client.name}
+            {/* Aggregated Option */}
+            <option value="aggregated">All Clients (Aggregated)</option>
+
+            {/* Province Options */}
+            {stateOptions.map((region) => (
+              <option key={region.value} value={region.value}>
+                {region.label}
               </option>
             ))}
           </select>
@@ -3053,13 +3058,13 @@ export default function OverviewAppView() {
           {/* Client Info Section (conditionally rendered) */}
           {currentClient !== 'aggregated' && currentTabState === 'punjab' && (
             <Stack spacing={1} sx={{ mt: 2 }}>
-              <Typography variant="body2" sx={{ fontWeight: 'bold', color: 'white' }}>
+              <Typography variant="body2" sx={{ fontWeight: 'bold', color: 'black' }}>
                 Client Information
               </Typography>
               {mockEnergyData.punjab.clients
                 .filter((client: any) => client.id === currentClient)
                 .map((client: any) => (
-                  <Typography key={client.id} variant="body2" sx={{ color: 'white' }}>
+                  <Typography key={client.id} variant="body2" sx={{ color: 'black' }}>
                     Location: {client.location}
                   </Typography>
                 ))}
@@ -3067,7 +3072,7 @@ export default function OverviewAppView() {
           )}
         </Grid>
 
-        <Grid xs={12} md={4}>
+        <Grid xs={12} md={4}sx={{ height: '100%' }}>
           <EcommerceWidgetSummary
             title="Total Consumption (kWh)"
             percent={dashboardData.totalConsumption.percentChange}
@@ -3075,55 +3080,120 @@ export default function OverviewAppView() {
             chart={{
               series: dashboardData.totalConsumption.chartData,
             }}
-          />
-        </Grid>
-
-        <Grid xs={12} md={4}>
-          <EcommerceWidgetSummary
-            title="Current Usage (kWh)"
-            percent={dashboardData.currentUsage.percentChange}
-            total={dashboardData.currentUsage.value}
-            chart={{
-              colors: [theme.palette.info.light, theme.palette.info.main],
-              series: dashboardData.currentUsage.chartData,
-            }}
-          />
-        </Grid>
-
-        <Grid xs={12} md={4}>
-          <Stack
-            spacing={3}
-            sx={{ height: '100%', p: 3, borderRadius: 2, bgcolor: 'background.paper' }}
+            sx={{ height: '100%' }} // ✅ Force equal card height
           >
-            <Typography variant="h6">Energy Cost</Typography>
-            <Stack spacing={2}>
-              <Typography variant="h4">
-                {dashboardData.costs.totalCost.toLocaleString()} PKR
+            <Box sx={{ mt: 2, width: '100%' }}>
+              {' '}
+              
+              <Stack spacing={1}>
+                <Stack direction="row" justifyContent="space-between">
+                  <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                    WAPDA
+                  </Typography>
+                  <Typography variant="body2">
+                    {dashboardData.totalConsumption.bySource?.[
+                      '(WAPDA) - Electricity'
+                    ]?.toLocaleString() }{' '}
+                      1,150 kWh
+                  </Typography>
+                </Stack>
+
+                <Stack direction="row" justifyContent="space-between">
+                  <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                    Generator
+                  </Typography>
+                  <Typography variant="body2">
+                    {dashboardData.totalConsumption.bySource?.Generator?.toLocaleString() }{' '}
+                    380 kWh
+                  </Typography>
+                </Stack>
+
+                <Stack direction="row" justifyContent="space-between">
+                  <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                    Solar
+                  </Typography>
+                  <Typography variant="body2">77 kWh</Typography>
+                </Stack>
+              </Stack>
+            </Box>
+          </EcommerceWidgetSummary>
+        </Grid>
+
+        <Grid xs={12} md={4}sx={{ height: '100%' }}>
+        <EcommerceWidgetSummary
+          title="Current Usage (kWh)"
+          percent={dashboardData.currentUsage.percentChange}
+          total={dashboardData.currentUsage.value}
+          chart={{
+            colors: [theme.palette.info.light, theme.palette.info.main],
+            series: dashboardData.currentUsage.chartData,
+          }}
+        >
+          <Stack spacing={1} mt={2} sx={{ width: '100%' }}>
+            <Stack direction="row" justifyContent="space-between">
+              <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                WAPDA
               </Typography>
+              <Typography variant="body2">
+                {dashboardData.currentUsage.bySource?.['(WAPDA) - Electricity']?.toLocaleString() }{' '}
+                105 kWh
+              </Typography>
+            </Stack>
+            <Stack direction="row" justifyContent="space-between">
+              <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                Generator
+              </Typography>
+              <Typography variant="body2">
+                {dashboardData.currentUsage.bySource?.Generator?.toLocaleString() }40 kWh
+              </Typography>
+            </Stack>
+            <Stack direction="row" justifyContent="space-between">
+              <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                Solar
+              </Typography>
+              <Typography variant="body2">10 kWh</Typography>
+            </Stack>
+          </Stack>
+        </EcommerceWidgetSummary>
+        </Grid>
+
+        <Grid xs={12} md={4}sx={{ height: '100%' }}>
+          <EcommerceWidgetSummary
+            title="Energy Cost (PKR)"
+            total={dashboardData.costs.totalCost}
+            percent={dashboardData.costs.percentChange} // if available; otherwise null
+            chart={{
+              series: dashboardData.costs.chartData || [], // optional if you have cost trends
+            }}
+          >
+            {/* Source Breakdown */}
+            <Stack spacing={1} mt={2}>
               <Stack direction="row" justifyContent="space-between">
                 <Typography variant="body2" sx={{ color: 'text.secondary' }}>
                   WAPDA
                 </Typography>
                 <Typography variant="body2">
-                  {dashboardData.costs.costBySource['(WAPDA) - Electricity'].toLocaleString()} PKR
+                  {dashboardData.costs.costBySource['(WAPDA) - Electricity'].toLocaleString()}1,150 kWh
                 </Typography>
               </Stack>
+
               <Stack direction="row" justifyContent="space-between">
                 <Typography variant="body2" sx={{ color: 'text.secondary' }}>
                   Generator
                 </Typography>
                 <Typography variant="body2">
-                  {dashboardData.costs.costBySource.Generator.toLocaleString()} PKR
+                  {dashboardData.costs.costBySource.Generator.toLocaleString()}380 kWh
                 </Typography>
               </Stack>
+
               <Stack direction="row" justifyContent="space-between">
                 <Typography variant="body2" sx={{ color: 'text.secondary' }}>
                   Solar
                 </Typography>
-                <Typography variant="body2">0 PKR</Typography>
+                <Typography variant="body2">77 kWh</Typography>
               </Stack>
             </Stack>
-          </Stack>
+          </EcommerceWidgetSummary>
         </Grid>
 
         <Grid xs={12} md={6} lg={4}>
@@ -3183,8 +3253,8 @@ export default function OverviewAppView() {
           <BankingRecentTransitions
             tableData={_bankingRecentTransitions}
             tableLabels={[
-              { id: 'description', label: 'Description' },
-              { id: 'date', label: 'Name' },
+              { id: 'description', label: 'Branch' },
+              // { id: 'date', label: 'Name' },
               { id: 'amount', label: 'Address' },
               { id: 'status', label: 'Cost' },
               { id: 'consumption', label: 'Consumption' },

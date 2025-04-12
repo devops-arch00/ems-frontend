@@ -22,6 +22,7 @@ interface Props extends CardProps {
     series: number[];
     options?: ApexOptions;
   };
+  children?: React.ReactNode;
 }
 
 export default function EcommerceWidgetSummary({
@@ -30,6 +31,7 @@ export default function EcommerceWidgetSummary({
   total,
   chart,
   sx,
+  children,
   ...other
 }: Props) {
   const theme = useTheme();
@@ -108,26 +110,35 @@ export default function EcommerceWidgetSummary({
   );
 
   return (
-    <Card sx={{ display: 'flex', alignItems: 'center', p: 3, ...sx }} {...other}>
-      <Box sx={{ flexGrow: 1 }}>
-        <Typography variant="subtitle2" paragraph>
-          {title}
-        </Typography>
-
-        <Typography variant="h3" gutterBottom>
-          {fNumber(total)}
-        </Typography>
-
-        {renderTrending}
+    <Card sx={{ p: 3, ...sx }} {...other}>
+    <Stack spacing={2}>
+      <Box sx={{ display: 'flex', alignItems: 'center' }}>
+        <Box sx={{ flexGrow: 1 }}>
+          <Typography variant="subtitle2" paragraph>
+            {title}
+          </Typography>
+  
+          <Typography variant="h3" gutterBottom>
+            {fNumber(total)}
+          </Typography>
+  
+          {/* Remove this below */}
+          {/* {renderTrending} */}
+        </Box>
+  
+        <Chart
+          type="line"
+          series={[{ data: series }]}
+          options={chartOptions}
+          width={96}
+          height={64}
+        />
       </Box>
-
-      <Chart
-        type="line"
-        series={[{ data: series }]}
-        options={chartOptions}
-        width={96}
-        height={64}
-      />
-    </Card>
+  
+      {/* Render breakdown (WAPDA / Generator / Solar) BELOW the chart */}
+      {children}
+    </Stack>
+  </Card>
+  
   );
 }

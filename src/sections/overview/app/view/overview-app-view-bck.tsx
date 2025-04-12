@@ -47,7 +47,7 @@ export default function OverviewAppView() {
   // States mapping
   const statesByCountry: Record<string, StateOption[]> = {
     pakistan: [
-      { value: 'punjab', label: 'Punjab' },
+      { value: '', label: 'Punjab' },
       { value: 'sindh', label: 'Sindh' },
       { value: 'khyber_pakhtunkhwa', label: 'Khyber Pakhtunkhwa' },
       { value: 'balochistan', label: 'Balochistan' },
