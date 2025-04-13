@@ -8,6 +8,7 @@ import { AuthGuard } from 'src/auth/guard';
 import DashboardLayout from 'src/layouts/dashboard';
 import { Suspense } from 'react';
 import { LoadingScreen } from 'src/components/loading-screen';
+import ExceptionReportPage from 'src/pages/dashboard/exception-report';
 import { mainRoutes, HomePage } from './main';
 import { authRoutes } from './auth';
 import { authDemoRoutes } from './auth-demo';
@@ -43,7 +44,13 @@ export default function Router() {
         </DashboardLayout>
         // </AuthGuard>
       ),
-      children: [{ element: <IndexPage />, index: true }],
+      children: [
+        { element: <IndexPage />, index: true },
+        { path: 'exception-report', element: <ExceptionReportPage /> },
+        // { path: 'settings', element: <SettingsPage /> },
+        // { path: 'users', element: <UsersPage /> },
+        // Add more child routes as needed
+      ],
     },
 
     // Auth routes

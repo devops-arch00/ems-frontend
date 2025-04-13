@@ -2920,7 +2920,7 @@ export default function OverviewAppView() {
       <Grid container spacing={3}>
         <Grid xs={12} md={9} sx={{ background: 'white', color: 'black', p: 2 }}>
           <Typography variant="h5" component="div" sx={{ mb: 2 }}>
-            Dashboard
+            Overiview
           </Typography>
 
           <Grid xs={12} md={12} sx={{ mb: 2 }}>
@@ -3017,9 +3017,8 @@ export default function OverviewAppView() {
         </Grid>
 
         <Grid xs={12} md={3} sx={{ background: 'white', p: 2 }}>
-          {/* Select Client Label */}
           <Typography variant="subtitle1" sx={{ mb: 2, color: 'black' }}>
-            Select Client
+            Select Site
           </Typography>
 
           {/* Dropdown */}
@@ -3072,7 +3071,7 @@ export default function OverviewAppView() {
           )}
         </Grid>
 
-        <Grid xs={12} md={4}sx={{ height: '100%' }}>
+        <Grid xs={12} md={4} sx={{ height: '100%' }}>
           <EcommerceWidgetSummary
             title="Total Consumption (kWh)"
             percent={dashboardData.totalConsumption.percentChange}
@@ -3084,7 +3083,7 @@ export default function OverviewAppView() {
           >
             <Box sx={{ mt: 2, width: '100%' }}>
               {' '}
-              
+
               <Stack spacing={1}>
                 <Stack direction="row" justifyContent="space-between">
                   <Typography variant="body2" sx={{ color: 'text.secondary' }}>
@@ -3093,8 +3092,8 @@ export default function OverviewAppView() {
                   <Typography variant="body2">
                     {dashboardData.totalConsumption.bySource?.[
                       '(WAPDA) - Electricity'
-                    ]?.toLocaleString() }{' '}
-                      1,150 kWh
+                    ]?.toLocaleString()}{' '}
+                    1,150 kWh
                   </Typography>
                 </Stack>
 
@@ -3103,7 +3102,7 @@ export default function OverviewAppView() {
                     Generator
                   </Typography>
                   <Typography variant="body2">
-                    {dashboardData.totalConsumption.bySource?.Generator?.toLocaleString() }{' '}
+                    {dashboardData.totalConsumption.bySource?.Generator?.toLocaleString()}{' '}
                     380 kWh
                   </Typography>
                 </Stack>
@@ -3119,45 +3118,45 @@ export default function OverviewAppView() {
           </EcommerceWidgetSummary>
         </Grid>
 
-        <Grid xs={12} md={4}sx={{ height: '100%' }}>
-        <EcommerceWidgetSummary
-          title="Current Usage (kWh)"
-          percent={dashboardData.currentUsage.percentChange}
-          total={dashboardData.currentUsage.value}
-          chart={{
-            colors: [theme.palette.info.light, theme.palette.info.main],
-            series: dashboardData.currentUsage.chartData,
-          }}
-        >
-          <Stack spacing={1} mt={2} sx={{ width: '100%' }}>
-            <Stack direction="row" justifyContent="space-between">
-              <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                WAPDA
-              </Typography>
-              <Typography variant="body2">
-                {dashboardData.currentUsage.bySource?.['(WAPDA) - Electricity']?.toLocaleString() }{' '}
-                105 kWh
-              </Typography>
+        <Grid xs={12} md={4} sx={{ height: '100%' }}>
+          <EcommerceWidgetSummary
+            title="Current Usage (kWh)"
+            percent={dashboardData.currentUsage.percentChange}
+            total={dashboardData.currentUsage.value}
+            chart={{
+              colors: [theme.palette.info.light, theme.palette.info.main],
+              series: dashboardData.currentUsage.chartData,
+            }}
+          >
+            <Stack spacing={1} mt={2} sx={{ width: '100%' }}>
+              <Stack direction="row" justifyContent="space-between">
+                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                  WAPDA
+                </Typography>
+                <Typography variant="body2">
+                  {dashboardData.currentUsage.bySource?.['(WAPDA) - Electricity']?.toLocaleString()}{' '}
+                  105 kWh
+                </Typography>
+              </Stack>
+              <Stack direction="row" justifyContent="space-between">
+                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                  Generator
+                </Typography>
+                <Typography variant="body2">
+                  {dashboardData.currentUsage.bySource?.Generator?.toLocaleString()}40 kWh
+                </Typography>
+              </Stack>
+              <Stack direction="row" justifyContent="space-between">
+                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                  Solar
+                </Typography>
+                <Typography variant="body2">10 kWh</Typography>
+              </Stack>
             </Stack>
-            <Stack direction="row" justifyContent="space-between">
-              <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                Generator
-              </Typography>
-              <Typography variant="body2">
-                {dashboardData.currentUsage.bySource?.Generator?.toLocaleString() }40 kWh
-              </Typography>
-            </Stack>
-            <Stack direction="row" justifyContent="space-between">
-              <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                Solar
-              </Typography>
-              <Typography variant="body2">10 kWh</Typography>
-            </Stack>
-          </Stack>
-        </EcommerceWidgetSummary>
+          </EcommerceWidgetSummary>
         </Grid>
 
-        <Grid xs={12} md={4}sx={{ height: '100%' }}>
+        <Grid xs={12} md={4} sx={{ height: '100%' }}>
           <EcommerceWidgetSummary
             title="Energy Cost (PKR)"
             total={dashboardData.costs.totalCost}
@@ -3256,9 +3255,9 @@ export default function OverviewAppView() {
               { id: 'description', label: 'Branch' },
               // { id: 'date', label: 'Name' },
               { id: 'amount', label: 'Address' },
-              { id: 'status', label: 'Cost' },
+
               { id: 'consumption', label: 'Consumption' },
-              { id: '' },
+              { id: 'status', label: 'Cost (pkr)' },
             ]}
           />
         </Grid>

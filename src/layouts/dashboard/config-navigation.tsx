@@ -43,6 +43,7 @@ const ICONS = {
   ecommerce: icon('ic_ecommerce'),
   analytics: icon('ic_analytics'),
   dashboard: icon('ic_dashboard'),
+  setting: icon("solar:settings-bold-duotone"),
 };
 
 // ----------------------------------------------------------------------
@@ -60,12 +61,31 @@ export function useNavData() {
           // { title: t('app'), path: paths.dashboard.root, icon: ICONS.dashboard },
           // { title: t('ecommerce'), path: paths.dashboard.general.ecommerce, icon: ICONS.ecommerce },
           {
-            title: t('Dashboards'),
+            title: t('Overview'),
             path: '/',
             icon: ICONS.analytics,
           },
-          { title: t('Admin'), path: '/data', icon: ICONS.banking },
-          { title: t('Settings'), path: '/hub', icon: ICONS.booking },
+          { title: t('Tariff'), path: '/tariff', icon: ICONS.banking },
+          {
+            title: t('Reports'),
+            path: '/exception-report',
+            icon: ICONS.blog,
+            children: [
+              { title: t('Exception Report'), path: '/exception-report' },
+              { title: t('Site Report'), path: '/Site-report' },
+            ],
+          },
+          {
+            title: t('Analytics'),
+            path: '/cost-analytics',
+            icon: ICONS.analytics,
+            children: [
+              { title: t('Cost Analysis'), path: '/cost-analytics' },
+              { title: t('Consumption Analysis'), path: '/consumption-analytics' },
+            ],
+          },
+          { title: t('Admin'), path: '/admin', icon: ICONS.user },
+          { title: t('Settings'), path: '/settings', icon: ICONS.setting },
           // { title: t('file'), path: paths.dashboard.general.file, icon: ICONS.file },
         ],
       },
@@ -91,17 +111,17 @@ export function useNavData() {
       //     },
 
       //     // PRODUCT
-      //     {
-      //       title: t('product'),
-      //       path: paths.dashboard.product.root,
-      //       icon: ICONS.product,
-      //       children: [
-      //         { title: t('list'), path: paths.dashboard.product.root },
-      //         { title: t('details'), path: paths.dashboard.product.demo.details },
-      //         { title: t('create'), path: paths.dashboard.product.new },
-      //         { title: t('edit'), path: paths.dashboard.product.demo.edit },
-      //       ],
-      //     },
+      // {
+      //   title: t('product'),
+      //   path: paths.dashboard.product.root,
+      //   icon: ICONS.product,
+      //   children: [
+      //     { title: t('list'), path: paths.dashboard.product.root },
+      //     { title: t('details'), path: paths.dashboard.product.demo.details },
+      //     { title: t('create'), path: paths.dashboard.product.new },
+      //     { title: t('edit'), path: paths.dashboard.product.demo.edit },
+      //   ],
+      // },
 
       //     // ORDER
       //     {

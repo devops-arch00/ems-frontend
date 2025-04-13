@@ -220,72 +220,72 @@ export const _bankingRecentTransitions = [
   {
     id: _mock.id(2),
     description: 'Solar energy payment received from grid',
-    name: "Quaid Solar Park",
+    name: "Jinnah Avenue Branch",
     avatarUrl: _mock.image.avatar(2),
     type: 'Income',
     message: 'Receive money from',
     category: 'Net Metering',
     date: _mock.time(2),
-    status: '$4500', // Cost
+    status: '4500', // Cost
     amount: 'Bahawalpur, Punjab', // Address
     consumption: '1200 kWh',
-    logo: 'https://image.jimcdn.com/app/cms/image/transf/dimension=145x10000:format=png/path/sa1a4b303052e8a1a/image/i730245ca993b7a2e/version/1573801367/image.png'
+    logo: 'https://crystalpng.com/wp-content/uploads/2025/01/meezan-bank-logo.png'
   },
   {
     id: _mock.id(3),
     description: 'Panel installation at commercial building',
-    name: "SolarMax Pvt Ltd",
+    name: "Stock Exchange Branch",
     avatarUrl: _mock.image.avatar(3),
     type: 'Expenses',
     message: 'Payment for',
     category: 'Installation',
     date: _mock.time(3),
-    status: '$12,000',
+    status: '12,000',
     amount: 'Lahore, Punjab',
     consumption: '850 kWh',
-    logo: 'https://solarmax.pk/pub/media/logo/websites/1/SolarMax-logo-2914x768.png'
+    logo: 'https://crystalpng.com/wp-content/uploads/2025/01/meezan-bank-logo.png'
   },
   {
     id: _mock.id(4),
     description: 'Routine maintenance fee',
-    name: "Theresa Webb",
+    name: "I-10 Branch",
     avatarUrl: _mock.image.avatar(4),
     type: 'Expenses',
     message: 'Payment for',
     category: 'Maintenance',
     date: _mock.time(4),
-    status: '$600',
+    status: '600',
     amount: 'Faisalabad, Punjab',
     consumption: '300 kWh',
-    logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9sHPsuJHL7PuikV8XOa6UTfU4Xd9bIPmDbg&s'
+    logo: 'https://crystalpng.com/wp-content/uploads/2025/01/meezan-bank-logo.png'
   },
   {
     id: _mock.id(5),
     description: 'Payment from government subsidy program',
-    name: "Punjab Solar Subsidy",
+    name: "74-E Blue Area Branch",
     avatarUrl: null,
     type: 'Income',
     message: 'Receive subsidy',
     category: 'Govt. Program',
     date: _mock.time(5),
-    status: '$3,500',
+    status: '3,500',
     amount: 'Multan, Punjab',
     consumption: '1000 kWh',
-    logo: 'https://www.punjab.gov.pk/sites/punjab.gov.pk/themes/bootstrap_subtheme/logo.png'
+    logo: 'https://crystalpng.com/wp-content/uploads/2025/01/meezan-bank-logo.png'
   },
   {
     id: _mock.id(6),
     description: 'Purchased new inverters for plant upgrade',
-    name: "Green Energy Equip",
+    name: "Bahria Enclave Branch",
     avatarUrl: null,
     type: 'Expenses',
     message: 'Payment for',
     category: 'Hardware Upgrade',
     date: _mock.time(6),
-    status: '$8,200',
+    status: '8,200',
     amount: 'Islamabad, Capital',
     consumption: '—',
-    logo: 'https://png.pngtree.com/png-vector/20191027/ourmid/pngtree-solar-panel-icon-design-template-vector-isolated-png-image_1879860.jpg'
+    logo: 'https://crystalpng.com/wp-content/uploads/2025/01/meezan-bank-logo.png'
   },
 ];
 

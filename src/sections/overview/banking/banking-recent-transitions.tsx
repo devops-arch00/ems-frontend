@@ -147,10 +147,10 @@ function BankingRecentTransitionsRow({ row }: BankingRecentTransitionsRowProps) 
           <ListItemText primary={row.name} />
         </TableCell>
 
-        <TableCell>{row.category}</TableCell>
+        {/* <TableCell>{row.category}</TableCell> */}
         <TableCell>{row.amount}</TableCell>
-        <TableCell>{row.status}</TableCell>
         <TableCell>{row.consumption}</TableCell>
+        <TableCell>{row.status}</TableCell>
       </TableRow>
 
       <CustomPopover
