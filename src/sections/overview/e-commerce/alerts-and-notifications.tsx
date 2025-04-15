@@ -1,28 +1,151 @@
 // @mui
 import { Box, Typography, Chip, Stack, Paper, Card, CardHeader } from '@mui/material';
 
+
 const alerts = [
+  // Punjab
   {
-    id: 'Quaid Solar Park',
+    id: 'Lahore Solar Grid',
     message: 'Power outage detected',
     severity: 'Critical',
+    province: 'Punjab',
   },
   {
-    id: 'SolarMax Pvt Ltd',
+    id: 'Multan Clean Energy',
+    message: 'Inverter failure reported',
+    severity: 'High',
+    province: 'Punjab',
+  },
+  {
+    id: 'Rawalpindi Solar Park',
+    message: 'Module overheating',
+    severity: 'Medium',
+    province: 'Punjab',
+  },
+
+  // Sindh
+  {
+    id: 'Karachi SunPower Hub',
     message: 'Unusual consumption pattern',
     severity: 'High',
+    province: 'Sindh',
   },
   {
-    id: 'Theresa Webb',
+    id: 'Hyderabad Solar Works',
+    message: 'Panel misalignment',
+    severity: 'Medium',
+    province: 'Sindh',
+  },
+  {
+    id: 'Sukkur Energy Field',
+    message: 'Low battery voltage',
+    severity: 'Low',
+    province: 'Sindh',
+  },
+
+  // KPK
+  {
+    id: 'Peshawar Solar Co.',
     message: 'Maintenance required',
     severity: 'Medium',
+    province: 'KPK',
   },
   {
-    id: 'Green Energy Equip',
+    id: 'Abbottabad Green Systems',
     message: 'Efficiency below target',
     severity: 'Low',
+    province: 'KPK',
+  },
+  {
+    id: 'Mardan Solar Tech',
+    message: 'Communication loss',
+    severity: 'High',
+    province: 'KPK',
+  },
+
+  // Balochistan
+  {
+    id: 'Quetta Energy Ltd.',
+    message: 'Efficiency below target',
+    severity: 'Low',
+    province: 'Balochistan',
+  },
+  {
+    id: 'Turbat Solar Station',
+    message: 'Dust accumulation alert',
+    severity: 'Medium',
+    province: 'Balochistan',
+  },
+  {
+    id: 'Gwadar Green Panel Co.',
+    message: 'Voltage spike detected',
+    severity: 'Critical',
+    province: 'Balochistan',
+  },
+
+  // Islamabad
+  {
+    id: 'Islamabad GreenTech',
+    message: 'Battery backup failure',
+    severity: 'Critical',
+    province: 'Islamabad',
+  },
+  {
+    id: 'Capital Solar Systems',
+    message: 'Unauthorized access detected',
+    severity: 'High',
+    province: 'Islamabad',
+  },
+  {
+    id: 'I-9 Industrial Solar',
+    message: 'Inverter overheating',
+    severity: 'Medium',
+    province: 'Islamabad',
+  },
+
+  // Kashmir
+  {
+    id: 'Muzaffarabad HydroSolar',
+    message: 'Temperature sensor fault',
+    severity: 'High',
+    province: 'Kashmir',
+  },
+  {
+    id: 'Mirpur Solar Project',
+    message: 'Cable wear detected',
+    severity: 'Medium',
+    province: 'Kashmir',
+  },
+  {
+    id: 'Bagh Solar Solutions',
+    message: 'Power fluctuation',
+    severity: 'Critical',
+    province: 'Kashmir',
   },
 ];
+
+// const alerts = [
+//   {
+//     id: 'Quaid Solar Park',
+//     message: 'Power outage detected',
+//     severity: 'Critical',
+//   },
+//   {
+//     id: 'SolarMax Pvt Ltd',
+//     message: 'Unusual consumption pattern',
+//     severity: 'High',
+//   },
+//   {
+//     id: 'Theresa Webb',
+//     message: 'Maintenance required',
+//     severity: 'Medium',
+//   },
+//   {
+//     id: 'Green Energy Equip',
+//     message: 'Efficiency below target',
+//     severity: 'Low',
+//   },
+// ];
 
 const severityStyles = {
   Critical: {
@@ -47,7 +170,7 @@ const severityStyles = {
   },
 };
 
-export default function AlertsList() {
+export default function AlertsList(props:any) {
   return (
     <Card>
       <CardHeader
@@ -60,7 +183,8 @@ export default function AlertsList() {
         }
       />
       <Stack sx={{ p: '24px', pt: 0 }} spacing={2}>
-        {alerts.map((alert) => {
+        {/* eslint-disable-next-line react/destructuring-assignment */}
+        {alerts?.filter(a => a.province.toLowerCase() === props.currentTabState).map((alert) => {
           const style = severityStyles[alert.severity];
           return (
             <Paper

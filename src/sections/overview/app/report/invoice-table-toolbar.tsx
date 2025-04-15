@@ -136,7 +136,7 @@ export default function InvoiceTableToolbar({
             fullWidth
             value={filters.name}
             onChange={handleFilterName}
-            placeholder="Search customer or invoice number..."
+            placeholder="Search customer ..."
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">

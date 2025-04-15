@@ -3044,7 +3044,7 @@ export default function OverviewAppView() {
             }}
           >
             {/* Aggregated Option */}
-            <option value="aggregated">All Clients (Aggregated)</option>
+            {/*<option value="aggregated">All Clients (Aggregated)</option>*/}
 
             {/* Province Options */}
             {stateOptions.map((region) => (
@@ -3205,7 +3205,7 @@ export default function OverviewAppView() {
           />
         </Grid>
 
-        <Grid xs={6} md={4} lg={4}>
+        <Grid xs={8} md={8} lg={8}>
           <Stack spacing={3}>
             <BankingBalanceStatistics
               title="Change in Usage"
@@ -3224,33 +3224,33 @@ export default function OverviewAppView() {
           </Stack>
         </Grid>
 
-        <Grid xs={6} md={4} lg={4}>
-          <EcommerceYearlySales
-            title="Usage Estimate (Forecast)"
-            subheader={`(+${dashboardData?.usageEstimate?.percentChange}%) Projection`}
-            chart={{
-              categories: dashboardData?.usageEstimate?.categories,
-              series: [
-                {
-                  year: 'Forecast',
-                  data: [
-                    {
-                      name: currentTab === 'year' ? 'Last Year' : 'Till now',
-                      data: dashboardData?.usageEstimate?.series[0]?.data,
-                    },
-                    {
-                      name: currentTab === 'year' ? 'This Year' : 'Predicted',
-                      data: dashboardData?.usageEstimate?.series[1]?.data,
-                    },
-                  ],
-                },
-              ],
-            }}
-          />
-        </Grid>
+        {/*<Grid xs={6} md={4} lg={4}>*/}
+        {/*  <EcommerceYearlySales*/}
+        {/*    title="Usage Estimate (Forecast)"*/}
+        {/*    subheader={`(+${dashboardData?.usageEstimate?.percentChange}%) Projection`}*/}
+        {/*    chart={{*/}
+        {/*      categories: dashboardData?.usageEstimate?.categories,*/}
+        {/*      series: [*/}
+        {/*        {*/}
+        {/*          year: 'Forecast',*/}
+        {/*          data: [*/}
+        {/*            {*/}
+        {/*              name: currentTab === 'year' ? 'Last Year' : 'Till now',*/}
+        {/*              data: dashboardData?.usageEstimate?.series[0]?.data,*/}
+        {/*            },*/}
+        {/*            {*/}
+        {/*              name: currentTab === 'year' ? 'This Year' : 'Predicted',*/}
+        {/*              data: dashboardData?.usageEstimate?.series[1]?.data,*/}
+        {/*            },*/}
+        {/*          ],*/}
+        {/*        },*/}
+        {/*      ],*/}
+        {/*    }}*/}
+        {/*  />*/}
+        {/*</Grid>*/}
         <Grid xs={8}>
           <BankingRecentTransitions
-            tableData={_bankingRecentTransitions}
+            tableData={_bankingRecentTransitions[currentTabState]}
             tableLabels={[
               { id: 'description', label: 'Branch' },
               // { id: 'date', label: 'Name' },
@@ -3262,8 +3262,35 @@ export default function OverviewAppView() {
           />
         </Grid>
         <Grid xs={4}>
-          <AlertsList />
+          <AlertsList
+            currentTabState={currentTabState}
+          />
         </Grid>
+      </Grid>
+
+      <Grid xs={6} md={4} lg={4}>
+        <EcommerceYearlySales
+          title="Usage Estimate (Forecast)"
+          subheader={`(+${dashboardData?.usageEstimate?.percentChange}%) Projection`}
+          chart={{
+            categories: dashboardData?.usageEstimate?.categories,
+            series: [
+              {
+                year: 'Forecast',
+                data: [
+                  {
+                    name: currentTab === 'year' ? 'Last Year' : 'Till now',
+                    data: dashboardData?.usageEstimate?.series[0]?.data,
+                  },
+                  {
+                    name: currentTab === 'year' ? 'This Year' : 'Predicted',
+                    data: dashboardData?.usageEstimate?.series[1]?.data,
+                  },
+                ],
+              },
+            ],
+          }}
+        />
       </Grid>
     </Container>
   );

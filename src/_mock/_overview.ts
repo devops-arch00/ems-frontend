@@ -216,78 +216,346 @@ export const _bankingCreditCard = [
   },
 ];
 
-export const _bankingRecentTransitions = [
-  {
-    id: _mock.id(2),
-    description: 'Solar energy payment received from grid',
-    name: "Jinnah Avenue Branch",
-    avatarUrl: _mock.image.avatar(2),
-    type: 'Income',
-    message: 'Receive money from',
-    category: 'Net Metering',
-    date: _mock.time(2),
-    status: '4500', // Cost
-    amount: 'Bahawalpur, Punjab', // Address
-    consumption: '1200 kWh',
-    logo: 'https://crystalpng.com/wp-content/uploads/2025/01/meezan-bank-logo.png'
-  },
-  {
-    id: _mock.id(3),
-    description: 'Panel installation at commercial building',
-    name: "Stock Exchange Branch",
-    avatarUrl: _mock.image.avatar(3),
-    type: 'Expenses',
-    message: 'Payment for',
-    category: 'Installation',
-    date: _mock.time(3),
-    status: '12,000',
-    amount: 'Lahore, Punjab',
-    consumption: '850 kWh',
-    logo: 'https://crystalpng.com/wp-content/uploads/2025/01/meezan-bank-logo.png'
-  },
-  {
-    id: _mock.id(4),
-    description: 'Routine maintenance fee',
-    name: "I-10 Branch",
-    avatarUrl: _mock.image.avatar(4),
-    type: 'Expenses',
-    message: 'Payment for',
-    category: 'Maintenance',
-    date: _mock.time(4),
-    status: '600',
-    amount: 'Faisalabad, Punjab',
-    consumption: '300 kWh',
-    logo: 'https://crystalpng.com/wp-content/uploads/2025/01/meezan-bank-logo.png'
-  },
-  {
-    id: _mock.id(5),
-    description: 'Payment from government subsidy program',
-    name: "74-E Blue Area Branch",
-    avatarUrl: null,
-    type: 'Income',
-    message: 'Receive subsidy',
-    category: 'Govt. Program',
-    date: _mock.time(5),
-    status: '3,500',
-    amount: 'Multan, Punjab',
-    consumption: '1000 kWh',
-    logo: 'https://crystalpng.com/wp-content/uploads/2025/01/meezan-bank-logo.png'
-  },
-  {
-    id: _mock.id(6),
-    description: 'Purchased new inverters for plant upgrade',
-    name: "Bahria Enclave Branch",
-    avatarUrl: null,
-    type: 'Expenses',
-    message: 'Payment for',
-    category: 'Hardware Upgrade',
-    date: _mock.time(6),
-    status: '8,200',
-    amount: 'Islamabad, Capital',
-    consumption: '—',
-    logo: 'https://crystalpng.com/wp-content/uploads/2025/01/meezan-bank-logo.png'
-  },
-];
+
+export const _bankingRecentTransitions = {
+  punjab: [
+    {
+      id: _mock.id(101),
+      description: 'Net metering credit from grid operator',
+      name: "Bank of Punjab – Model Town Branch",
+      avatarUrl: _mock.image.avatar(101),
+      type: 'Income',
+      message: 'Received credit from',
+      category: 'Net Metering',
+      date: _mock.time(101),
+      status: '4800',
+      amount: 'Model Town, Lahore, Punjab',
+      consumption: '1250 kWh',
+      logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkbvjdDgpAbAvbeOfQImZOILAIDLKrwTkttw&s'
+    },
+    {
+      id: _mock.id(102),
+      description: 'Installation of rooftop solar panels',
+      name: "Meezan Bank – D Ground Branch",
+      avatarUrl: _mock.image.avatar(102),
+      type: 'Expenses',
+      message: 'Payment for',
+      category: 'Installation',
+      date: _mock.time(102),
+      status: '13200',
+      amount: 'D Ground, Faisalabad, Punjab',
+      consumption: '900 kWh',
+      logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkbvjdDgpAbAvbeOfQImZOILAIDLKrwTkttw&s'
+    },
+    {
+      id: _mock.id(103),
+      description: 'Government solar incentive deposit',
+      name: "Habib Bank – Civil Lines Branch",
+      avatarUrl: _mock.image.avatar(103),
+      type: 'Income',
+      message: 'Incentive from',
+      category: 'Govt. Program',
+      date: _mock.time(103),
+      status: '4200',
+      amount: 'Civil Lines, Gujranwala, Punjab',
+      consumption: '1100 kWh',
+      logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkbvjdDgpAbAvbeOfQImZOILAIDLKrwTkttw&s'
+    },
+    {
+      id: _mock.id(104),
+      description: 'Preventive maintenance service',
+      name: "Allied Bank – Satellite Town Branch",
+      avatarUrl: _mock.image.avatar(104),
+      type: 'Expenses',
+      message: 'Payment for',
+      category: 'Maintenance',
+      date: _mock.time(104),
+      status: '750',
+      amount: 'Satellite Town, Sargodha, Punjab',
+      consumption: '350 kWh',
+      logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkbvjdDgpAbAvbeOfQImZOILAIDLKrwTkttw&s'
+    },
+    {
+      id: _mock.id(105),
+      description: 'Battery storage unit purchase',
+      name: "UBL – Cantt Branch",
+      avatarUrl: _mock.image.avatar(105),
+      type: 'Expenses',
+      message: 'Payment for',
+      category: 'Battery System',
+      date: _mock.time(105),
+      status: '9100',
+      amount: 'Cantt, Rawalpindi, Punjab',
+      consumption: '—',
+      logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkbvjdDgpAbAvbeOfQImZOILAIDLKrwTkttw&s'
+    }
+  ],
+  islamabad: [
+    {
+      id: _mock.id(6),
+      description: 'Inverter system upgrade',
+      name: "Bahria Enclave Branch",
+      avatarUrl: null,
+      type: 'Expenses',
+      message: 'Payment for',
+      category: 'Hardware Upgrade',
+      date: _mock.time(6),
+      status: '8200',
+      amount: 'Islamabad, Capital',
+      consumption: '—',
+      logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkbvjdDgpAbAvbeOfQImZOILAIDLKrwTkttw&s'
+    },
+    {
+      id: _mock.id(12),
+      description: 'Smart meter installation',
+      name: "G-8 Markaz Branch",
+      avatarUrl: _mock.image.avatar(12),
+      type: 'Expenses',
+      message: 'Payment for',
+      category: 'Smart Metering',
+      date: _mock.time(12),
+      status: '3000',
+      amount: 'Islamabad, Capital',
+      consumption: '—',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Islamabad_flag.svg/1280px-Islamabad_flag.svg.png'
+    },
+  ],
+  sindh: [
+    {
+      id: _mock.id(7),
+      description: 'Wind energy export to grid',
+      name: "Clifton Branch",
+      avatarUrl: _mock.image.avatar(7),
+      type: 'Income',
+      message: 'Energy export payment',
+      category: 'Wind Energy',
+      date: _mock.time(7),
+      status: '7500',
+      amount: 'Karachi, Sindh',
+      consumption: '1600 kWh',
+      logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkbvjdDgpAbAvbeOfQImZOILAIDLKrwTkttw&s'
+    },
+    {
+      id: _mock.id(8),
+      description: 'Panel maintenance for coastal plant',
+      name: "Hyderabad Branch",
+      avatarUrl: _mock.image.avatar(8),
+      type: 'Expenses',
+      message: 'Payment for',
+      category: 'Maintenance',
+      date: _mock.time(8),
+      status: '500',
+      amount: 'Hyderabad, Sindh',
+      consumption: '250 kWh',
+      logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkbvjdDgpAbAvbeOfQImZOILAIDLKrwTkttw&s'
+    },
+  ],
+  kpk: [
+    {
+      id: _mock.id(9),
+      description: 'Mini hydro plant grid integration',
+      name: "Peshawar Cantt Branch",
+      avatarUrl: _mock.image.avatar(9),
+      type: 'Income',
+      message: 'Receive grid payment',
+      category: 'Hydro Energy',
+      date: _mock.time(9),
+      status: '9200',
+      amount: 'Peshawar, KPK',
+      consumption: '2200 kWh',
+      logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkbvjdDgpAbAvbeOfQImZOILAIDLKrwTkttw&s'
+    },
+    {
+      id: _mock.id(10),
+      description: 'Battery backup system upgrade',
+      name: "Abbottabad Branch",
+      avatarUrl: _mock.image.avatar(10),
+      type: 'Expenses',
+      message: 'Payment for',
+      category: 'Battery System',
+      date: _mock.time(10),
+      status: '6100',
+      amount: 'Abbottabad, KPK',
+      consumption: '—',
+      logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkbvjdDgpAbAvbeOfQImZOILAIDLKrwTkttw&s'
+    },
+  ],
+  balochistan: [
+    {
+      id: _mock.id(11),
+      description: 'Solar village project subsidy',
+      name: "Quetta Main Branch",
+      avatarUrl: _mock.image.avatar(11),
+      type: 'Income',
+      message: 'Subsidy received',
+      category: 'Rural Electrification',
+      date: _mock.time(11),
+      status: '10000',
+      amount: 'Quetta, Balochistan',
+      consumption: '1800 kWh',
+      logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkbvjdDgpAbAvbeOfQImZOILAIDLKrwTkttw&s'
+    },
+    {
+      id: _mock.id(13),
+      description: 'Transport cost for panel delivery',
+      name: "Gwadar Port Branch",
+      avatarUrl: _mock.image.avatar(13),
+      type: 'Expenses',
+      message: 'Payment for',
+      category: 'Logistics',
+      date: _mock.time(13),
+      status: '2500',
+      amount: 'Gwadar, Balochistan',
+      consumption: '—',
+      logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkbvjdDgpAbAvbeOfQImZOILAIDLKrwTkttw&s'
+    },
+  ],
+  kashmir: [
+    {
+      id: _mock.id(201),
+      description: 'Payment received for excess energy supplied to the grid',
+      name: "Bank Alfalah – Domel Branch",
+      avatarUrl: _mock.image.avatar(201),
+      type: 'Income',
+      message: 'Credit from grid operator',
+      category: 'Net Metering',
+      date: _mock.time(201),
+      status: '3900',
+      amount: 'Domel, Muzaffarabad, AJK',
+      consumption: '980 kWh',
+      logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkbvjdDgpAbAvbeOfQImZOILAIDLKrwTkttw&s'
+    },
+    {
+      id: _mock.id(202),
+      description: 'Installation of solar panels at hospital',
+      name: "HBL – Allama Iqbal Road Branch",
+      avatarUrl: _mock.image.avatar(202),
+      type: 'Expenses',
+      message: 'Payment for',
+      category: 'Installation',
+      date: _mock.time(202),
+      status: '14,000',
+      amount: 'Allama Iqbal Road, Mirpur, AJK',
+      consumption: '1050 kWh',
+      logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkbvjdDgpAbAvbeOfQImZOILAIDLKrwTkttw&s'
+    },
+    {
+      id: _mock.id(203),
+      description: 'Govt. program subsidy credited for school solar setup',
+      name: "MCB – Main Bazaar Branch",
+      avatarUrl: _mock.image.avatar(203),
+      type: 'Income',
+      message: 'Received subsidy from',
+      category: 'Govt. Program',
+      date: _mock.time(203),
+      status: '4800',
+      amount: 'Main Bazaar, Rawalakot, AJK',
+      consumption: '900 kWh',
+      logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkbvjdDgpAbAvbeOfQImZOILAIDLKrwTkttw&s'
+    },
+    {
+      id: _mock.id(204),
+      description: 'Routine solar maintenance at university',
+      name: "Askari Bank – Shaheed Chowk Branch",
+      avatarUrl: _mock.image.avatar(204),
+      type: 'Expenses',
+      message: 'Service charges paid',
+      category: 'Maintenance',
+      date: _mock.time(204),
+      status: '950',
+      amount: 'Shaheed Chowk, Bagh, AJK',
+      consumption: '400 kWh',
+      logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkbvjdDgpAbAvbeOfQImZOILAIDLKrwTkttw&s'
+    },
+    {
+      id: _mock.id(205),
+      description: 'Purchase of solar water heating equipment',
+      name: "NBP – Chattar Domel Branch",
+      avatarUrl: _mock.image.avatar(205),
+      type: 'Expenses',
+      message: 'Procurement from',
+      category: 'Equipment Purchase',
+      date: _mock.time(205),
+      status: '6700',
+      amount: 'Chattar Domel, Muzaffarabad, AJK',
+      consumption: '—',
+      logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkbvjdDgpAbAvbeOfQImZOILAIDLKrwTkttw&s'
+    }
+  ]
+};
+
+// export const _bankingRecentTransitions = [
+//   {
+//     id: _mock.id(2),
+//     description: 'Solar energy payment received from grid',
+//     name: "Jinnah Avenue Branch",
+//     avatarUrl: _mock.image.avatar(2),
+//     type: 'Income',
+//     message: 'Receive money from',
+//     category: 'Net Metering',
+//     date: _mock.time(2),
+//     status: '4500', // Cost
+//     amount: 'Bahawalpur, Punjab', // Address
+//     consumption: '1200 kWh',
+//     logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkbvjdDgpAbAvbeOfQImZOILAIDLKrwTkttw&s'
+//   },
+//   {
+//     id: _mock.id(3),
+//     description: 'Panel installation at commercial building',
+//     name: "Stock Exchange Branch",
+//     avatarUrl: _mock.image.avatar(3),
+//     type: 'Expenses',
+//     message: 'Payment for',
+//     category: 'Installation',
+//     date: _mock.time(3),
+//     status: '12,000',
+//     amount: 'Lahore, Punjab',
+//     consumption: '850 kWh',
+//     logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkbvjdDgpAbAvbeOfQImZOILAIDLKrwTkttw&s'
+//   },
+//   {
+//     id: _mock.id(4),
+//     description: 'Routine maintenance fee',
+//     name: "I-10 Branch",
+//     avatarUrl: _mock.image.avatar(4),
+//     type: 'Expenses',
+//     message: 'Payment for',
+//     category: 'Maintenance',
+//     date: _mock.time(4),
+//     status: '600',
+//     amount: 'Faisalabad, Punjab',
+//     consumption: '300 kWh',
+//     logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkbvjdDgpAbAvbeOfQImZOILAIDLKrwTkttw&s'
+//   },
+//   {
+//     id: _mock.id(5),
+//     description: 'Payment from government subsidy program',
+//     name: "74-E Blue Area Branch",
+//     avatarUrl: null,
+//     type: 'Income',
+//     message: 'Receive subsidy',
+//     category: 'Govt. Program',
+//     date: _mock.time(5),
+//     status: '3,500',
+//     amount: 'Multan, Punjab',
+//     consumption: '1000 kWh',
+//     logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkbvjdDgpAbAvbeOfQImZOILAIDLKrwTkttw&s'
+//   },
+//   {
+//     id: _mock.id(6),
+//     description: 'Purchased new inverters for plant upgrade',
+//     name: "Bahria Enclave Branch",
+//     avatarUrl: null,
+//     type: 'Expenses',
+//     message: 'Payment for',
+//     category: 'Hardware Upgrade',
+//     date: _mock.time(6),
+//     status: '8,200',
+//     amount: 'Islamabad, Capital',
+//     consumption: '—',
+//     logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkbvjdDgpAbAvbeOfQImZOILAIDLKrwTkttw&s'
+//   },
+// ];
 
 
 export const electricityCosts = [

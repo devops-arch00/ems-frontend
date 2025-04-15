@@ -71,7 +71,7 @@ const defaultFilters: IInvoiceTableFilters = {
 
 // ----------------------------------------------------------------------
 
-export default function ExceptionReporView() {
+export default function SiteReportView() {
   const theme = useTheme();
 
   const settings = useSettingsContext();
@@ -188,7 +188,7 @@ export default function ExceptionReporView() {
           heading="Reports"
           links={[
             {
-              name: 'Exception Report',
+              name: 'Site Report',
               href: '/',
             },
           ]}
@@ -197,13 +197,13 @@ export default function ExceptionReporView() {
           }}
         />
         <Card>
-          {/*<InvoiceTableToolbar*/}
-          {/*  filters={filters}*/}
-          {/*  onFilters={handleFilters}*/}
-          {/*  //*/}
-          {/*  dateError={dateError}*/}
-          {/*  serviceOptions={INVOICE_SERVICE_OPTIONS.map((option) => option.name)}*/}
-          {/*/>*/}
+          <InvoiceTableToolbar
+            filters={filters}
+            onFilters={handleFilters}
+            //
+            dateError={dateError}
+            serviceOptions={INVOICE_SERVICE_OPTIONS.map((option) => option.name)}
+          />
 
           {canReset && (
             <InvoiceTableFiltersResult
@@ -228,33 +228,33 @@ export default function ExceptionReporView() {
                   tableData.map((row) => row.id)
                 )
               }
-              // action={
-              //   <Stack direction="row">
-              //     <Tooltip title="Sent">
-              //       <IconButton color="primary">
-              //         <Iconify icon="iconamoon:send-fill" />
-              //       </IconButton>
-              //     </Tooltip>
-              //
-              //     <Tooltip title="Download">
-              //       <IconButton color="primary">
-              //         <Iconify icon="eva:download-outline" />
-              //       </IconButton>
-              //     </Tooltip>
-              //
-              //     <Tooltip title="Print">
-              //       <IconButton color="primary">
-              //         <Iconify icon="solar:printer-minimalistic-bold" />
-              //       </IconButton>
-              //     </Tooltip>
-              //
-              //     <Tooltip title="Delete">
-              //       <IconButton color="primary" onClick={confirm.onTrue}>
-              //         <Iconify icon="solar:trash-bin-trash-bold" />
-              //       </IconButton>
-              //     </Tooltip>
-              //   </Stack>
-              // }
+              action={
+                <Stack direction="row">
+                  <Tooltip title="Sent">
+                    <IconButton color="primary">
+                      <Iconify icon="iconamoon:send-fill" />
+                    </IconButton>
+                  </Tooltip>
+
+                  <Tooltip title="Download">
+                    <IconButton color="primary">
+                      <Iconify icon="eva:download-outline" />
+                    </IconButton>
+                  </Tooltip>
+
+                  <Tooltip title="Print">
+                    <IconButton color="primary">
+                      <Iconify icon="solar:printer-minimalistic-bold" />
+                    </IconButton>
+                  </Tooltip>
+
+                  <Tooltip title="Delete">
+                    <IconButton color="primary" onClick={confirm.onTrue}>
+                      <Iconify icon="solar:trash-bin-trash-bold" />
+                    </IconButton>
+                  </Tooltip>
+                </Stack>
+              }
             />
 
             <Scrollbar>
@@ -387,10 +387,15 @@ function applyFilter({
 
   if (!dateError) {
     if (startDate && endDate) {
+      const adjustedEndDate = new Date(endDate);
+      adjustedEndDate.setDate(adjustedEndDate.getDate() + 1);
+
+      console.log("adjustedEndDate", adjustedEndDate);
+
       inputData = inputData.filter(
         (invoice) =>
           fTimestamp(invoice.createDate) >= fTimestamp(startDate) &&
-          fTimestamp(invoice.createDate) <= fTimestamp(endDate)
+          fTimestamp(invoice.createDate) < fTimestamp(adjustedEndDate)
       );
     }
   }

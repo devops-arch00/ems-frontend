@@ -42,7 +42,7 @@ export default function InvoiceTableRow({
   onEditRow,
   onDeleteRow,
 }: Props) {
-  const { sent, invoiceNumber, createDate, dueDate, status, invoiceTo, totalAmount } = row;
+  const { sent, invoiceNumber, createDate, dueDate, status, invoiceTo, totalAmount, address, event } = row;
 
   const confirm = useBoolean();
 
@@ -56,9 +56,22 @@ export default function InvoiceTableRow({
         </TableCell>
 
         <TableCell sx={{ display: 'flex', alignItems: 'center' }}>
-          <Avatar alt={invoiceTo.name} sx={{ mr: 2 }}>
-            {invoiceTo.name.charAt(0).toUpperCase()}
-          </Avatar>
+          <Avatar
+            src={row.logo || ''}
+            sx={{
+              width: 48,
+              height: 48,
+              color: 'text.secondary',
+              bgcolor: 'background.neutral',
+              objectFit: 'contain',
+              '& .MuiAvatar-img': {
+                objectFit: 'contain',
+              },
+            }}
+          />
+          {/*<Avatar alt={invoiceTo.name} sx={{ mr: 2 }}>*/}
+          {/*  {invoiceTo.name.charAt(0).toUpperCase()}*/}
+          {/*</Avatar>*/}
 
           <ListItemText
             disableTypography
@@ -80,48 +93,60 @@ export default function InvoiceTableRow({
           />
         </TableCell>
 
-        <TableCell>
-          <ListItemText
-            primary={format(new Date(createDate), 'dd MMM yyyy')}
-            secondary={format(new Date(createDate), 'p')}
-            primaryTypographyProps={{ typography: 'body2', noWrap: true }}
-            secondaryTypographyProps={{
-              mt: 0.5,
-              component: 'span',
-              typography: 'caption',
-            }}
-          />
-        </TableCell>
+        {/*<TableCell>*/}
+        {/*  <ListItemText*/}
+        {/*    primary={format(new Date(createDate), 'dd MMM yyyy')}*/}
+        {/*    secondary={format(new Date(createDate), 'p')}*/}
+        {/*    primaryTypographyProps={{ typography: 'body2', noWrap: true }}*/}
+        {/*    secondaryTypographyProps={{*/}
+        {/*      mt: 0.5,*/}
+        {/*      component: 'span',*/}
+        {/*      typography: 'caption',*/}
+        {/*    }}*/}
+        {/*  />*/}
+        {/*</TableCell>*/}
+        <TableCell>{address}</TableCell>
+
+        {/*<TableCell>*/}
+        {/*  <ListItemText*/}
+        {/*    primary={format(new Date(dueDate), 'dd MMM yyyy')}*/}
+        {/*    secondary={format(new Date(dueDate), 'p')}*/}
+        {/*    primaryTypographyProps={{ typography: 'body2', noWrap: true }}*/}
+        {/*    secondaryTypographyProps={{*/}
+        {/*      mt: 0.5,*/}
+        {/*      component: 'span',*/}
+        {/*      typography: 'caption',*/}
+        {/*    }}*/}
+        {/*  />*/}
+        {/*</TableCell>*/}
+        <Label
+          variant="soft"
+          color={
+            (status === 'paid' && 'success') ||
+            (status === 'pending' && 'warning') ||
+            (status === 'offline' && 'error') ||
+            'default'
+          }
+        >
+          {event}
+        </Label>
+
+        <TableCell>{createDate.toDateString()}</TableCell>
+
+        <TableCell align="center">{event == 'Offline'? '0' : (Math.random().toFixed(4) * 10000).toFixed(4)}</TableCell>
 
         <TableCell>
-          <ListItemText
-            primary={format(new Date(dueDate), 'dd MMM yyyy')}
-            secondary={format(new Date(dueDate), 'p')}
-            primaryTypographyProps={{ typography: 'body2', noWrap: true }}
-            secondaryTypographyProps={{
-              mt: 0.5,
-              component: 'span',
-              typography: 'caption',
-            }}
-          />
-        </TableCell>
-
-        <TableCell>{fCurrency(totalAmount)}</TableCell>
-
-        <TableCell align="center">{sent}</TableCell>
-
-        <TableCell>
-          <Label
-            variant="soft"
-            color={
-              (status === 'paid' && 'success') ||
-              (status === 'pending' && 'warning') ||
-              (status === 'overdue' && 'error') ||
-              'default'
-            }
-          >
-            {status}
-          </Label>
+          {/*<Label*/}
+          {/*  variant="soft"*/}
+          {/*  color={*/}
+          {/*    (status === 'paid' && 'success') ||*/}
+          {/*    (status === 'pending' && 'warning') ||*/}
+          {/*    (status === 'overdue' && 'error') ||*/}
+          {/*    'default'*/}
+          {/*  }*/}
+          {/*>*/}
+            {dueDate.toDateString()}
+          {/*</Label>*/}
         </TableCell>
 
         <TableCell align="right" sx={{ px: 1 }}>

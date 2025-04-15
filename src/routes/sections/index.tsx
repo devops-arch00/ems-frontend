@@ -14,6 +14,7 @@ import { authRoutes } from './auth';
 import { authDemoRoutes } from './auth-demo';
 import { dashboardRoutes, IndexPage } from './dashboard';
 import { componentsRoutes } from './components';
+import SiteReportPage from '../../pages/dashboard/site-report';
 
 // ----------------------------------------------------------------------
 
@@ -47,6 +48,7 @@ export default function Router() {
       children: [
         { element: <IndexPage />, index: true },
         { path: 'exception-report', element: <ExceptionReportPage /> },
+        { path: 'Site-report', element: <SiteReportPage /> },
         // { path: 'settings', element: <SettingsPage /> },
         // { path: 'users', element: <UsersPage /> },
         // Add more child routes as needed

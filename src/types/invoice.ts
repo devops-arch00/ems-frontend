@@ -39,4 +39,7 @@ export type IInvoice = {
   items: IInvoiceItem[];
   invoiceTo: IAddressItem;
   invoiceFrom: IAddressItem;
+  address?: any;
+  event?: any;
+  logo?: any;
 };
