@@ -15,6 +15,8 @@ import { authDemoRoutes } from './auth-demo';
 import { dashboardRoutes, IndexPage } from './dashboard';
 import { componentsRoutes } from './components';
 import SiteReportPage from '../../pages/dashboard/site-report';
+import FinancialAnalysisPage from 'src/pages/dashboard/financial-analytics';
+
 
 // ----------------------------------------------------------------------
 
@@ -49,6 +51,7 @@ export default function Router() {
         { element: <IndexPage />, index: true },
         { path: 'exception-report', element: <ExceptionReportPage /> },
         { path: 'Site-report', element: <SiteReportPage /> },
+        { path: 'financial-analytics', element: <FinancialAnalysisPage /> },
         // { path: 'settings', element: <SettingsPage /> },
         // { path: 'users', element: <UsersPage /> },
         // Add more child routes as needed

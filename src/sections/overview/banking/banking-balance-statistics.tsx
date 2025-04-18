@@ -46,6 +46,7 @@ export default function BankingBalanceStatistics({ title, subheader, selected, c
       width: 2,
       colors: ['transparent'],
     },
+    
     xaxis: {
       categories,
     },

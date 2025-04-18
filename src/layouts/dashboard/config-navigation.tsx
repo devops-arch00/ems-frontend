@@ -77,10 +77,10 @@ export function useNavData() {
           },
           {
             title: t('Analytics'),
-            path: '/cost-analytics',
+            path: '/financial-analytics',
             icon: ICONS.analytics,
             children: [
-              { title: t('Cost Analysis'), path: '/cost-analytics' },
+              { title: t('Financial Analysis'), path: '/financial-analytics' },
               { title: t('Consumption Analysis'), path: '/consumption-analytics' },
             ],
           },
